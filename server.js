@@ -6,7 +6,7 @@ const path = require('path');
 const port = 2023;
 const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
- const {} = require('./controllers/dashboardController');
+const {} = require('./controllers/dashboardController');
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
@@ -18,6 +18,10 @@ app.use(ejsLayouts);
 app.use(express.static(path.join(__dirname, '/public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
+app.use('/bootstrap-icons', express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font/')));
+app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
+app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 //--------------  Start Server  ----------------//
 

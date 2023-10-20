@@ -1,20 +1,95 @@
-  form {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        label, input, textarea {
-            margin: 5px 0;
-        }
-        h2, ul {
-            margin-top: 20px;
-        }
-        button {
-            background-color: goldenrod;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+:root {
+  --bg-grey: #f6f6f6;
+  --bg-grey-hover: #e7e7e7;
+  --bg-purple: rebeccapurple;
+}
+.bi::before {
+  display: inline-block;
+  padding-right: 0.75rem;
+}
 
-        /* LEFT NAV */
-        
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+label,
+input,
+textarea {
+  margin: 5px 0;
+}
+h2,
+ul {
+  margin-top: 20px;
+}
+button {
+  background-color: gold;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  padding: 6px 20px;
+}
+
+.outer {
+  margin: 20px;
+}
+
+.topbar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.explore {
+  display: inline-block;
+  grid-column-start: 11;
+  text-align: right;
+}
+.logo {
+  display: inline-block;
+  grid-column-start: 1;
+}
+.user {
+  background: var(--bg-purple);
+  border-radius: 100%;
+  color: white;
+  grid-column-start: 12;
+  width: 25px;
+  text-align: center;
+}
+
+.user-wrap {
+  text-align: left;
+  padding-left: 30px;
+}
+.new-plan {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  width: 250px;
+}
+
+/* LEFT NAV */
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+#leftNav {
+  background: var(--bg-grey);
+  height: 100vh;
+  padding-top: 20px;
+}
+#leftNav li.left-nav-item {
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  cursor: pointer;
+  display: block;
+  margin: 30px 30px 0 0;
+  padding: 10px 0 10px 25px;
+  transition: background-color 0.3s;
+}
+
+#leftNav li.left-nav-item:hover {
+  background: var(--bg-grey-hover);
+  transition: background-color 0.3s;
+}
