@@ -7,6 +7,8 @@ const port = 2023;
 const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
 const {} = require('./controllers/dashboardController');
+const { travelplan } = require('./controllers/travelplanController');
+travelplan
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
@@ -44,7 +46,10 @@ const startServer = async () => {
 //--------------  Routes Middleware  ----------------//
 
 const dashboardRouter = require('./routes/dashboardRouter');
+const travelplanRouter = require('./routes/travelplanRouter');
+
 
 app.use('/', dashboardRouter);
+app.use('/travelplan', travelplanRouter);
 
 startServer();
