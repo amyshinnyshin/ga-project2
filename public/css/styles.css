@@ -63,42 +63,42 @@ p{
   gap: 4px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 
-label,
-input,
-textarea {
-  margin: 5px 0;
-}
-h2,
+
+/* h2,
 ul {
   margin-top: 20px;
-}
+} */
 /* ------------------ BUTTON */
-.primary-button {
-  background-color: gold;
+.primary-create-button {
+  background: var(--saffron-400, #FCDD23);
   border-radius: 24px;
   border: none;
   cursor: pointer;
 }
-.secondary-button {
+
+.primary-button, .secondary-button {
   display: flex;
   padding: 12px 32px;
   justify-content: center;
   align-items: flex-start;
   gap: 8px;
   border-radius: 24px;
-  background: var(--black-100, #E7E7E7);
   border: none;
   cursor: pointer;
-  color: var(--black-950, #050505);
   font-size: 16px;
   font-weight: 600;
   line-height: 24px; /* 150% */
+  text-decoration: none;
+}
+.primary-button {
+  background: var(--saffron-400, #FCDD23);
+  color: var(--black-950, #050505);
+}
+
+.secondary-button {
+  background: var(--black-100, #E7E7E7);
+  color: var(--black-950, #050505);
 }
 
 
@@ -274,3 +274,53 @@ ul {
   background: var(--bg-grey-hover);
   transition: background-color 0.3s;
 } */
+
+/* ------------------ TRAVEL PLAN */
+.body-container{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 24px;
+  padding: 0px 32px 0px 32px;
+}
+.left-section {
+  grid-column: 1 / span 7;
+}
+
+.plan-details{
+  display: grid;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--black-100, #E7E7E7);
+}
+
+
+input, textarea, label {
+  grid-column: span 8;
+}
+
+label {
+  margin-bottom: 2px;
+
+}
+
+input, textarea {
+  border: 1px solid var(--black-600, #5D5D5D);
+  border-radius: 24px;
+}
+input {
+  height: 32px;
+  margin-bottom: 12px;
+}
+
+textarea {
+  height: 160px;
+}
+
+
+.schedule-section{
+  padding-top: 24px;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
