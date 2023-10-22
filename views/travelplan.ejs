@@ -1,57 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Travel Plan</title>
-    <style>
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        label, input, textarea {
-            margin: 5px 0;
-        }
-        h2, ul {
-            margin-top: 20px;
-        }
-        button {
-            background-color: yellow;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <h1>My Plans / New</h1>
-    
-    <form action="/create-plan" method="POST">
-        <!-- Travel Plan Name -->
-        <label for="planName">Plan Name:</label>
-        <input type="text" id="planName" name="planName" required>
-        
-        <!-- Location -->
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required>
-        
-        <!-- Description -->
-        <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="4" required></textarea>
-        
-        <h2>Schedule</h2>
-        
-        <!-- Add Event Button -->
-        <button type="button" id="addEventButton">Add Event</button>
-        
-        <!-- Event List -->
-        <ul id="eventList"></ul>
-        
-        <!-- Save Button -->
-        <button type="submit">Save</button>
-    </form>
-    
-    <script src="/script.js"></script>
-</body>
-</html>
+<!-- <h1>My Plans / New</h1> -->
+<div>
+  <%- include('partials/navigation/breadcrumbs') -%>
+</div>
+<div class="body-content">
+  <form action="/create-plan" method="POST">
+    <!-- Travel Plan Name -->
+    <label for="planName">Plan Name:</label>
+    <input type="text" id="planName" name="planName" required />
 
+    <!-- Location -->
+    <label for="location">Location:</label>
+    <input type="text" id="location" name="location" required />
 
+    <!-- Description -->
+    <label for="description">Description:</label>
+    <textarea id="description" name="description" rows="4" required></textarea>
+
+    <h2>Schedule</h2>
+
+    <!-- Add Event Button -->
+    <button type="button" id="addEventButton">Add Event</button>
+
+    <!-- Event List -->
+    <ul id="eventList"></ul>
+
+    <!-- Save Button -->
+    <button type="submit">Save</button>
+  </form>
+</div>
