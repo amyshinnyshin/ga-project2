@@ -6,9 +6,13 @@ const path = require('path');
 const port = 2023;
 const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
+<<<<<<< HEAD
 const {} = require('./controllers/dashboardController');
 const { travelplan } = require('./controllers/travelplanController');
 travelplan
+=======
+const {} = require('./controllers/dashboardController.js');
+>>>>>>> 4453c76 (trip plan v2)
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
@@ -28,7 +32,7 @@ app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 //--------------  Start Server  ----------------//
 
 const startServer = async () => {
-  // connect to to DB
+  // connect to DB
   await mongoose.connect(DATABASE_URL);
 
   mongoose.connection.on('connected', () => {
@@ -43,6 +47,12 @@ const startServer = async () => {
   });
 };
 
+
+router.get('/travelplan', (req, res) => {
+    res.render('partials/travelplan', { title: 'My Plans / Newe' });
+  });  
+  
+
 //--------------  Routes Middleware  ----------------//
 
 const dashboardRouter = require('./routes/dashboardRouter');
@@ -51,5 +61,9 @@ const travelplanRouter = require('./routes/travelplanRouter');
 
 app.use('/', dashboardRouter);
 app.use('/travelplan', travelplanRouter);
+
+const travelRouter = require('./routes/travelRouter');
+
+app.use('/', travelRouter);
 
 startServer();
