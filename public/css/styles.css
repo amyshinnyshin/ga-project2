@@ -63,49 +63,75 @@ p{
   gap: 4px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 
-label,
-input,
-textarea {
-  margin: 5px 0;
-}
-h2,
+
+/* h2,
 ul {
   margin-top: 20px;
-}
+} */
 /* ------------------ BUTTON */
-.primary-button {
-  background-color: gold;
+.primary-create-button {
+  background: var(--saffron-400, #FCDD23);
   border-radius: 24px;
   border: none;
   cursor: pointer;
 }
-.secondary-button {
+
+.primary-button, .secondary-button {
   display: flex;
   padding: 12px 32px;
   justify-content: center;
   align-items: flex-start;
   gap: 8px;
   border-radius: 24px;
-  background: var(--black-100, #E7E7E7);
   border: none;
   cursor: pointer;
-  color: var(--black-950, #050505);
   font-size: 16px;
   font-weight: 600;
   line-height: 24px; /* 150% */
+  text-decoration: none;
+}
+.primary-button {
+  background: var(--saffron-400, #FCDD23);
+  color: var(--black-950, #050505);
 }
 
+.secondary-button {
+  background: var(--black-100, #E7E7E7);
+  color: var(--black-950, #050505);
+}
 
+.tertiary-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border: none;
+  padding: 0px;
+  background: white;
+  color: #5D5D5D;
+}
 
 
 .outer {
   margin: 20px;
+}
+
+/* ------------------ BREADCRUMBS */
+#breadcrumbs {
+  padding: 16px 32px 16px 32px;
+}
+
+ul.breadcrumbs {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-direction: row;
+  margin: 0px; 
+  padding: 0px;
+}
+
+.current {
+  font-weight: 600;
 }
 
 /* ------------------ TOP NAV */
@@ -169,7 +195,7 @@ ul {
   gap: 32px;
 }
 
-.explore{
+.explore, .back{
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
@@ -235,12 +261,14 @@ ul {
 ul {
   list-style-type: none;
   display: flex;
-  padding-left: 0;
-  margin: 32px 32px 0px 0px;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
+}
+.navigation-menu {
+  margin: 32px 32px 0px 0px;
+  padding-left: 0;
 }
 
 #leftNav li.left-nav-item {
@@ -274,3 +302,68 @@ ul {
   background: var(--bg-grey-hover);
   transition: background-color 0.3s;
 } */
+
+/* ------------------ TRAVEL PLAN */
+.body-container{
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 24px;
+  padding: 24px 32px 24px 32px;
+}
+.left-section {
+  grid-column: 1 / span 8;
+}
+
+.plan-details{
+  display: grid;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--black-100, #E7E7E7);
+}
+
+
+input, textarea, label {
+  grid-column: span 8;
+}
+
+label {
+  margin-bottom: 2px;
+
+}
+
+input, textarea {
+  border: 1px solid var(--black-600, #5D5D5D);
+  border-radius: 24px;
+}
+input {
+  height: 32px;
+  margin-bottom: 12px;
+}
+
+textarea {
+  height: 160px;
+}
+
+
+.schedule-section{
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.right-section {
+  grid-column: 9 / span 4;
+}
+
+.google-maps{
+  grid-column: 9 / span 4;
+  height: 360px;
+  background-color: #5D5D5D;
+}

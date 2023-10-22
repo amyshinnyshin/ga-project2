@@ -2,29 +2,39 @@
 <div>
   <%- include('partials/navigation/breadcrumbs') -%>
 </div>
-<div class="body-content">
-  <form action="/create-plan" method="POST">
-    <!-- Travel Plan Name -->
-    <label for="planName">Plan Name:</label>
-    <input type="text" id="planName" name="planName" required />
+<div class="body-container">
+  <div class="left-section">
+    <form class="plan-details" action="/create-plan" method="POST">
+      <!-- Travel Plan Name -->
+      <label for="planName">Plan Name</label>
+      <input type="text" id="planName" name="planName" required />
 
-    <!-- Location -->
-    <label for="location">Location:</label>
-    <input type="text" id="location" name="location" required />
+      <!-- Location -->
+      <label for="location">Location</label>
+      <input type="text" id="location" name="location" required />
 
-    <!-- Description -->
-    <label for="description">Description:</label>
-    <textarea id="description" name="description" rows="4" required></textarea>
+      <!-- Description -->
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="4" required></textarea>
+    </form>
+      <div class="schedule-section">
+      <h3>Schedule</h3>
 
-    <h2>Schedule</h2>
+      <!-- Add Event Button -->
+        <button class="tertiary-button" type="button" id="addEventButton"><i class="bi bi-plus-lg" ></i></i>Add Event</button>
+        
+        <!-- Event List -->
+        <ul id="eventList"></ul>
+      </div>
+      <!-- Save Button -->
+      <button class="primary-button" type="submit">Save</button>
+  </div>
+  <div class="right-section">
+    <div class="google-maps">
 
-    <!-- Add Event Button -->
-    <button type="button" id="addEventButton">Add Event</button>
+    </div>
+    <div class="weather">
 
-    <!-- Event List -->
-    <ul id="eventList"></ul>
-
-    <!-- Save Button -->
-    <button type="submit">Save</button>
-  </form>
+    </div>
+  </div>
 </div>
