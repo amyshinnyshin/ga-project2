@@ -6,13 +6,14 @@ const path = require('path');
 const port = 2023;
 const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
-<<<<<<< HEAD
+
 const {} = require('./controllers/dashboardController');
 const { travelplan } = require('./controllers/travelplanController');
 travelplan
-=======
+
 const {} = require('./controllers/dashboardController.js');
->>>>>>> 4453c76 (trip plan v2)
+
+const {} = require('./controllers/dashboardController.js');
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);

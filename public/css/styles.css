@@ -1,13 +1,18 @@
+/* CSS VARS */
+
 :root {
   --bg-grey: #f6f6f6;
   --bg-grey-hover: #e7e7e7;
   --bg-purple: #2D3682;
 }
+
+/* ICONS */
 .bi::before {
   display: inline-block;
   /* padding-right: 0.75rem; */
 }
 
+/* MAIN CSS */
 body{
   font-family: 'Outfit', sans-serif;
   color: #050505;
@@ -47,13 +52,69 @@ p{
   line-height: 24px;
   margin: 0px
 }
-.emptystate-container{
+.emptystate-container, .saved-plans{
   /* margin-top: 108px; */
   display: flex;
   flex-direction: column;
+}
+
+/* table css */
+.saved-plans{
+  padding: 112px 32px 0px 32px;
+}
+
+thead {
+  background: #FFF;
+}
+
+th  {
+  color: var(--black-800, #454545);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px; 
+  padding: 12px 16px 12px 16px;
+  border-bottom: 1px solid var(--black-300, #B0B0B0);
+}
+
+td {
+  color: 1px solid var(--black-100, #E7E7E7);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px; 
+  padding: 20px 16px 20px 16px;
+  border-bottom: 1px solid var(--black-100, #E7E7E7);
+}
+.table-plan-name{
+  width: 400px
+}
+
+.actions{ 
+  display: flex;
   align-items: center;
+  gap: 16px;
+  justify-content: right;
+}
+
+.edit {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+    
+}
+
+.line{
+  height: 16px;
+}
+
+.delete {
+  color: var(--guardsman-red-700, #DB0000);
+}
+
+
+.emptystate-container{
   gap: 24px;
   padding-top: 160px;
+  align-items: center;
 }
 
 .emptystate-copy{
@@ -63,49 +124,116 @@ p{
   gap: 4px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
 
-label,
-input,
-textarea {
-  margin: 5px 0;
-}
-h2,
-ul {
-  margin-top: 20px;
-}
+
 /* ------------------ BUTTON */
-.primary-button {
-  background-color: gold;
+.primary-create-button {
+  background: var(--saffron-400, #FCDD23);
   border-radius: 24px;
   border: none;
   cursor: pointer;
 }
-.secondary-button {
+
+.primary-create-button:hover {
+  background: var(--saffron-500, #F6C113);
+}
+
+.primary-button, .secondary-button {
   display: flex;
   padding: 12px 32px;
   justify-content: center;
   align-items: flex-start;
   gap: 8px;
   border-radius: 24px;
-  background: var(--black-100, #E7E7E7);
   border: none;
   cursor: pointer;
-  color: var(--black-950, #050505);
   font-size: 16px;
   font-weight: 600;
   line-height: 24px; /* 150% */
+  text-decoration: none;
+}
+.primary-button {
+  background: var(--saffron-400, #FCDD23);
+  color: var(--black-950, #050505);
 }
 
+.primary-button:hover {
+  background: var(--saffron-500, #F6C113);
+}
+
+.secondary-button {
+  background: var(--black-100, #E7E7E7);
+  color: var(--black-950, #050505);
+}
+
+.secondary-button:hover {
+  background: var(--black-200, #D1D1D1);
+}
+
+
+
+.tertiary-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border: none;
+  padding: 0px;
+  background: white;
+  color: #5D5D5D;
+}
 
 
 
 .outer {
   margin: 20px;
+}
+/* BREADCRUMBS */
+#breadcrumbs ul.breadcrumbs{
+  /* border-bottom:1px solid var(--bg-grey-hover); */
+  display:flex;
+  flex-direction: row;
+  gap:15px;
+  justify-content: flex-start;
+  margin:0;
+  min-height:30px;
+  /* padding:15px 20px; */
+}
+ul.breadcrumbs li{
+  flex-direction: row;
+}
+ul.breadcrumbs li:after{
+  display:inline-block;
+  margin-left:10px;
+  content:'|'
+}
+ul.breadcrumbs li:last-of-type:after{
+  display:none;
+}
+ul.breadcrumbs li a{
+  color:black;
+  text-decoration: none;
+}
+ul.breadcrumbs li a:hover{
+  color:black;
+  /* text-decoration: underline; */
+}
+
+/* ------------------ BREADCRUMBS */
+#breadcrumbs {
+  padding: 16px 32px 16px 32px;
+}
+
+ul.breadcrumbs {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  flex-direction: row;
+  margin: 0px; 
+  padding: 0px;
+}
+
+.current {
+  font-weight: 600;
 }
 
 /* ------------------ TOP NAV */
@@ -129,7 +257,7 @@ ul {
   left: 0;
   width: 100%;
   background-color: #fff; /* Set the background color as needed */
-  z-index: 100;
+  z-index: 1;
 }
 .topbar{
   display: flex;
@@ -169,14 +297,14 @@ ul {
   gap: 32px;
 }
 
-.explore{
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
+.explore, .back {
   display: flex;
   align-items: center;
   gap: 8px;
   padding: 0px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
 .user {
@@ -235,12 +363,14 @@ ul {
 ul {
   list-style-type: none;
   display: flex;
-  padding-left: 0;
-  margin: 32px 32px 0px 0px;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
   align-self: stretch;
+}
+.navigation-menu {
+  margin: 32px 32px 0px 0px;
+  padding-left: 0;
 }
 
 #leftNav li.left-nav-item {
@@ -253,9 +383,14 @@ ul {
 }
 
 #leftNav li.left-nav-item:hover {
-  background: var(--bg-grey-hover);
+  background: var(--black-200, #D1D1D1);
   transition: background-color 0.3s;
 } 
+
+.active-nav-button {
+  background: var(--black-100, #E7E7E7);
+  font-weight: 600;
+}
 
 
 
@@ -274,3 +409,73 @@ ul {
   background: var(--bg-grey-hover);
   transition: background-color 0.3s;
 } */
+
+/* ------------------ TRAVEL PLAN */
+.body-container{
+  
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column-gap: 24px;
+  padding: 24px 32px 24px 32px;
+}
+.left-section {
+  grid-column: 1 / span 8;
+}
+
+.plan-details{
+  display: grid;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--black-100, #E7E7E7);
+}
+
+
+input, textarea, label {
+  grid-column: span 8;
+}
+
+label {
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+
+input, textarea {
+  border: 1px solid var(--black-600, #5D5D5D);
+  border-radius: 24px;
+  padding: 4px 16px 4px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  color: var(--black-900, #3D3D3D);
+}
+input {
+  height: 32px;
+  margin-bottom: 12px;
+}
+
+textarea {
+  height: 160px;
+}
+
+
+.schedule-section{
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.right-section {
+  grid-column: 9 / span 4;
+}
+
+.google-maps{
+  grid-column: 9 / span 4;
+  height: 360px;
+  background-color: #5D5D5D;
+}
