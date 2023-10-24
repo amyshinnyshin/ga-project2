@@ -6,8 +6,8 @@ const navButtons = document.querySelectorAll(".navigation-menu li");
 const addEventButton = document.getElementById('addEventButton');
 const modalOverlay = document.querySelector('.modal-overlay');
 const closeModalButton = modalOverlay.querySelector('.close');
-const cancelModalButton = modalOverlay.querySelector('.template-modal footer .cancel');
-const saveChangeButton = modalOverlay.querySelector('.template-modal-footer .save-changes');
+const cancelModalButton = modalOverlay.querySelector('.cancel');
+const saveChangeButton = modalOverlay.querySelector('.save-changes');
 
 
 
@@ -29,5 +29,6 @@ function closeModal() {
 
 addEventButton.addEventListener('click', openModal);
 closeModalButton.addEventListener('click', closeModal);
-cancelModalButton.addEventListener('click', closeModal)
+cancelModalButton.addEventListener('click', closeModal);
+
 
