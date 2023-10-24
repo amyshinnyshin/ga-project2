@@ -3,12 +3,11 @@ const app = express();
 const ejsLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const path = require('path');
-const port = 2023;
 const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
 const {} = require('./controllers/dashboardController');
 const { travelplan } = require('./controllers/travelplanController');
-travelplan
+travelplan;
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
@@ -36,7 +35,7 @@ const startServer = async () => {
   });
 
   app.listen(PORT, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${PORT}`);
   });
   app.on('connected', () => {
     console.log('MongoDB connected on:', DATABASE_URL);
@@ -45,9 +44,8 @@ const startServer = async () => {
 
 //--------------  Routes Middleware  ----------------//
 
-const dashboardRouter = require('./routes/dashboardRouter');
+const dashboardRouter = require('./routes/dashboardRouter.js');
 const travelplanRouter = require('./routes/travelplanRouter');
-
 
 app.use('/', dashboardRouter);
 app.use('/travelplan', travelplanRouter);
