@@ -1,13 +1,18 @@
+/* CSS VARS */
+
 :root {
   --bg-grey: #f6f6f6;
   --bg-grey-hover: #e7e7e7;
   --bg-purple: #2D3682;
 }
+
+/* ICONS */
 .bi::before {
   display: inline-block;
   /* padding-right: 0.75rem; */
 }
 
+/* MAIN CSS */
 body{
   font-family: 'Outfit', sans-serif;
   color: #050505;
@@ -121,10 +126,6 @@ td {
 
 
 
-/* h2,
-ul {
-  margin-top: 20px;
-} */
 /* ------------------ BUTTON */
 .primary-create-button {
   background: var(--saffron-400, #FCDD23);
@@ -169,6 +170,8 @@ ul {
   background: var(--black-200, #D1D1D1);
 }
 
+
+
 .tertiary-button {
   display: flex;
   align-items: flex-start;
@@ -180,8 +183,39 @@ ul {
 }
 
 
+
 .outer {
   margin: 20px;
+}
+/* BREADCRUMBS */
+#breadcrumbs ul.breadcrumbs{
+  border-bottom:1px solid var(--bg-grey-hover);
+  display:flex;
+  flex-direction: row;
+  gap:15px;
+  justify-content: flex-start;
+  margin:0;
+  min-height:30px;
+  padding:15px 20px;
+}
+ul.breadcrumbs li{
+  flex-direction: row;
+}
+ul.breadcrumbs li:after{
+  display:inline-block;
+  margin-left:10px;
+  content:'|'
+}
+ul.breadcrumbs li:last-of-type:after{
+  display:none;
+}
+ul.breadcrumbs li a{
+  color:black;
+  text-decoration: none;
+}
+ul.breadcrumbs li a:hover{
+  color:black;
+  text-decoration: underline;
 }
 
 /* ------------------ BREADCRUMBS */
