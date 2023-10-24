@@ -223,7 +223,7 @@ ul.breadcrumbs {
   left: 0;
   width: 100%;
   background-color: #fff; /* Set the background color as needed */
-  z-index: 100;
+  z-index: 1;
 }
 .topbar{
   display: flex;

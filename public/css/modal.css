@@ -1,13 +1,29 @@
-.event-modal{
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(61, 61, 61, 0.30);
+    z-index: 2;
+}
+
+.template-modal{
     width: 640px;
     border-radius: 24px;
     border: 1px solid var(--black-100, #E7E7E7);
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-.event-modal-content{
+.template-modal-content{
     padding: 24px
 }
-.event-modal-header {
+.template-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +46,7 @@ h2 {
     padding: 0px
 }
 
-.event-modal-body{
+.template-modal-body{
     display: flex;
     flex-direction: column;
 }
@@ -55,7 +71,7 @@ h2 {
 }
 
 
-.event-modal-footer{
+.template-modal-footer{
     display: flex;
     padding: 16px 24px;
     flex-direction: column;
@@ -74,8 +90,17 @@ h2 {
 
 .tertiary-button {
     font-weight: 600;
+    color: var(--black-950, #050505);
 }
 
 .tertiary-button:hover {
     text-decoration: underline;
+}
+
+
+
+/* -------------specific modal body  */
+.events-modal-body{
+    display: flex;
+    flex-direction: column;
 }
