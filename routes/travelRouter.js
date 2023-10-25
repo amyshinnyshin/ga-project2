@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 // add models
 // add controllers
-const { dashboard } = require('../controllers/dashboardController.js');
+const { travelplan } = require('../controllers/travelPlanController');
 
 
-router.get('/', dashboard);
+router.get('/travelplan', travelplan);
 
 module.exports = router;
