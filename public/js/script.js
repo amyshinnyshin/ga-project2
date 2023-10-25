@@ -13,7 +13,7 @@ const saveChangeButton = modalOverlay.querySelector('.save-changes');
 
 navButtons.forEach(navButton => {
     const navCopy = navButton.textContent
-    if (navCopy.includes('My Plans') && (currentPage === '/' || currentPage === '/travelplan')) {
+    if (navCopy.contains('My Plans') && (currentPage === '/' || currentPage === '/travelplan')) {
         navButton.classList.add('active-nav-button');
     }
 })
