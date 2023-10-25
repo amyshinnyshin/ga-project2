@@ -4,7 +4,10 @@
 </div>
 <div class="body-container">
   <div class="left-section">
-    <form class="plan-details" action="/create-plan" method="POST">
+<!--  FORM START  -->
+<!--    action=noun | method=verb -->
+<!--   Create Read Update Delete   -->
+    <form class="plan-details" action="/travelplans" method="POST">
       <!-- Travel Plan Name -->
       <label for="planName">Plan Name</label>
       <input type="text" id="planName" name="planName" required />
@@ -16,6 +19,7 @@
       <!-- Description -->
       <label for="description">Description</label>
       <textarea id="description" name="description" rows="4" required></textarea>
+      <input type="submit" value="Submit"/>
     </form>
       <div class="schedule-section">
       <h3>Schedule</h3>
@@ -35,16 +39,10 @@
     </div>
     <div class="weather">
 
-<<<<<<< HEAD
     <!-- Event List -->
     <ul id="eventList"></ul>
 
-<<<<<<< HEAD
-    <!-- Save Button -->
-    <button type="submit">Save</button>
-  </form>
-</div>
-=======
+
   <!-- Event Listener -->
   <ul id="eventList"></ul>
 
@@ -60,9 +58,7 @@
   <!-- Save Button -->
   <button type="submit">Save</button>
 </form>
->>>>>>> 4453c76 (trip plan v2)
-=======
+
     </div>
   </div>
 </div>
->>>>>>> dev-branch
