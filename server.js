@@ -3,11 +3,17 @@ const app = express();
 const ejsLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const path = require('path');
+const port = 2023;
 const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
+
 const {} = require('./controllers/dashboardController');
 const { travelplan } = require('./controllers/travelplanController');
-travelplan;
+travelplan
+
+const {} = require('./controllers/dashboardController.js');
+
+const {} = require('./controllers/dashboardController.js');
 
 app.set('view engine', 'ejs');
 app.use(ejsLayouts);
@@ -27,7 +33,7 @@ app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')))
 //--------------  Start Server  ----------------//
 
 const startServer = async () => {
-  // connect to to DB
+  // connect to DB
   await mongoose.connect(DATABASE_URL);
 
   mongoose.connection.on('connected', () => {
@@ -35,19 +41,30 @@ const startServer = async () => {
   });
 
   app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Server is running on port ${port}`);
   });
   app.on('connected', () => {
     console.log('MongoDB connected on:', DATABASE_URL);
   });
 };
 
+
+router.get('/travelplan', (req, res) => {
+    res.render('partials/travelplan', { title: 'My Plans / Newe' });
+  });  
+  
+
 //--------------  Routes Middleware  ----------------//
 
-const dashboardRouter = require('./routes/dashboardRouter.js');
+const dashboardRouter = require('./routes/dashboardRouter');
 const travelplanRouter = require('./routes/travelplanRouter');
+
 
 app.use('/', dashboardRouter);
 app.use('/travelplan', travelplanRouter);
+
+const travelRouter = require('./routes/travelRouter');
+
+app.use('/', travelRouter);
 
 startServer();
