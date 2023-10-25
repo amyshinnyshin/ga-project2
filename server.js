@@ -45,7 +45,7 @@ const startServer = async () => {
 //--------------  Routes Middleware  ----------------//
 
 const dashboardRouter = require('./routes/dashboardRouter.js');
-const travelplanRouter = require('./routes/travelplanRouter');
+const travelplanRouter = require('./routes/travelplanRouter.js');
 
 app.use('/', dashboardRouter);
 app.use('/travelplan', travelplanRouter);
