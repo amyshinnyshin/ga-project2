@@ -63,8 +63,8 @@ const travelplanRouter = require('./routes/travelplanRouter');
 app.use('/', dashboardRouter);
 app.use('/travelplan', travelplanRouter);
 
-const travelRouter = require('./routes/travelRouter');
+const travelPlanRouter = require('./routes/travelPlanRouter');
 
-app.use('/', travelRouter);
+app.use('/', travelPlanRouter);
 
 startServer();
