@@ -14,14 +14,14 @@ const {} = require('./controllers/dashboardController.js');
 
 const {} = require('./controllers/dashboardController.js');
 
-app.set('view engine', 'ejs');
-app.use(ejsLayouts);
+//app.set('view engine', 'ejs');
+//app.use(ejsLayouts);
 
 //--------------  Import Models  ----------------//
 
 //--------------  Import CSS &/or JSON ----------------//
 
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
