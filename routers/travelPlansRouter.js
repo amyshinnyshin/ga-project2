@@ -1,16 +1,12 @@
 const express = require('express');
 const router = express.Router();
-// add models
-// add controllers
-const { travelplans } = require('../controllers/travelPlansController');
 const { Plan } = require('../models/plan');
+const { travelplans } = require('../controllers/travelPlansController');
 
-router.get('/', (req, res) => {
-  console.log('Your have reached the all TravelPlansRoute');
-  res.send('<h1>this is the JSON format</h1>'); // sends a string, should send a file
-  //res.render('requires a view'); /// needs a view here
-  // res.json(sends json) // sends JSON
-});
+//GET travelplan by id route
+
+//GET all travelplans route
+router.get('/', travelplans);
 
 router.post('/', async (req, res) => {
   console.log('You have reached the POST TravelPlansRoute');
@@ -19,7 +15,13 @@ router.post('/', async (req, res) => {
   res.json(newPlan);
   // send to browser acknowledgement: redirect to homepage (with note?)
 
-  // Plan.create()/delete/findById
+  //CREATE new user route
+
+
+//UPDATE user by id route
+
+
+//DELETE user by id route
 });
 
 router.get('/new', (req, res) => {
