@@ -1,5 +1,10 @@
-function travelplan(req, res) {
-  res.render('travelplan');
+const express = require('express');
+const router = express.Router();
+
+const mongoose = require('mongoose');
+
+function travelplans(req, res, next) {
+  res.render("newTravelPlanForm.ejs");
 }
 
-module.exports = {travelplan}
+module.exports = { travelplans };

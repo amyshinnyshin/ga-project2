@@ -1,37 +1,18 @@
 const express = require('express');
-const app = express();
-const ejsLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
-const path = require('path');
-const port = 2023;
-const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
 
-const {} = require('./controllers/dashboardController');
-const { travelplan } = require('./controllers/travelPlanController');
-travelplan
-
-const {} = require('./controllers/dashboardController.js');
-
-const {} = require('./controllers/dashboardController.js');
-
-//app.set('view engine', 'ejs');
-//app.use(ejsLayouts);
+//------creating an express server instance-----⭐
+const app = express();
 
 //--------------  Import Models  ----------------//
 
 //--------------  Import CSS &/or JSON ----------------//
-
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
-// app.use('/bootstrap-icons', express.static(path.join(__dirname, 'node_modules/bootstrap-icons/font/')));
-// app.use('/js', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js')));
-// app.use('/js', express.static(path.join(__dirname, 'node_modules/jquery/dist')));
 
 //--------------  Start Server  ----------------//
-
 const startServer = async () => {
   // connect to DB
   await mongoose.connect(DATABASE_URL);
@@ -41,31 +22,18 @@ const startServer = async () => {
   });
 
   app.listen(PORT, () => {
-    console.log(`Server is running on port ${port}`);
+    console.log(`Server is running on port ${PORT}`);
   });
   app.on('connected', () => {
     console.log('MongoDB connected on:', DATABASE_URL);
   });
 };
 
-//
-// router.get('/travelplan', (req, res) => {
-//     res.render('partials/travelplan', { title: 'My Plans / Newe' });
-//   });
 
 //--------------  Routes Middleware  ----------------//
 
-const dashboardRouter = require('./routes/dashboardRouter');
-const travelplanRouter = require('./routes/travelPlansRouter.js');
+const travelPlansRouter = require('./routers/travelPlansRouter.js');
 
-app.use('/users', dashboardRouter);
 app.use('/travelplans', travelPlansRouter);
-
-app.use('/dashboardRouter', dashboardRouter);
-app.use('/travelplan', travelPlansRouter);
-
-const travelPlanRouter = require('./routes/travelPlansRouter.js');
-
-app.use('/', travelPlansRouter);
 
 startServer();
