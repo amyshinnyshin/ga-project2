@@ -15,8 +15,6 @@ router.post('/', async (req, res) => {
   res.json(newPlan);
   // send to browser acknowledgement: redirect to homepage (with note?)
 
-  //CREATE new user route
-
 
 //UPDATE user by id route
 

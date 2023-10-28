@@ -33,7 +33,10 @@ const startServer = async () => {
 //--------------  Routes Middleware  ----------------//
 
 const travelPlansRouter = require('./routers/travelPlansRouter.js');
+const usersRouter = require('./routers/usersRouter.js');
 
 app.use('/travelplans', travelPlansRouter);
+
+app.use('/users',usersRouter);
 
 startServer();
