@@ -5,23 +5,26 @@
 </div>
 <div class="body-container">
   <div class="left-section">
-<!--  FORM START  -->
-<!--    action=noun | method=verb -->
-<!--   Create Read Update Delete   -->
-    <form class="plan-details" action="/travelplans" method="POST">
-      <!-- Travel Plan Name -->
-      <label for="planName">Plan Name</label>
-      <input type="text" id="planName" name="planName" required />
 
-      <!-- Location -->
-      <label for="location">Location</label>
-      <input type="text" id="location" name="location" required />
+          <!--  FORM START  -->
+          <!--    action=noun | method=verb -->
+          <!--   Create Read Update Delete   -->
+        <form class="plan-details" action="/travelplans" method="POST">
+          <!-- Travel Plan Name -->
+          <label for="planName">Plan Name</label>
+          <input type="text" id="planName" name="planName" required />
 
-      <!-- Description -->
-      <label for="description">Description</label>
-      <textarea id="description" name="description" rows="4" required></textarea>
-      <input type="submit" value="Submit"/>
-    </form>
+          <!-- Location -->
+          <label for="location">Location</label>
+          <input type="text" id="location" name="location" required />
+
+          <!-- Description -->
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4" required></textarea>
+          <input type="submit" value="Submit"/>
+        </form>
+
+
       <div class="schedule-section">
       <h3>Schedule</h3>
 
@@ -30,6 +33,8 @@
         <%- include('partials/modal-layout', { modalTitle: 'Add Event'}) -%>
         <!-- Event List -->
         <ul id="eventList"></ul>
+
+        
       </div>
       <!-- Save Button -->
       <button class="primary-button" type="submit">Save</button>
@@ -43,22 +48,16 @@
     <!-- Event List -->
     <ul id="eventList"></ul>
 
-
-  <!-- Event Listener -->
-  <ul id="eventList"></ul>
-
-<form action = "/createnewplan" method="POST">
-  <label for="name">Plan Name: </label>
-  <input type="text" name="name" id="name" required />
-  <label for="location">Location: </label>
-  <input type="text" name="location" id="location" required />
-  <label for="description">Description: </label>
-  <textarea name="description" id="description" required />
-</form> 
-
-  <!-- Save Button -->
-  <button type="submit">Save</button>
-</form>
+        <form action = "/createnewplan" method="POST">
+          <label for="name">Plan Name: </label>
+          <input type="text" name="name" id="name" required />
+          <label for="location">Location: </label>
+          <input type="text" name="location" id="location" required />
+          <label for="description">Description: </label>
+          <textarea name="description" id="description" required />
+            <!-- Save Button -->
+           <button type="submit">Save</button>  
+        </form> 
 
     </div>
   </div>

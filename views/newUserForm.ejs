@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+<!-- <h1>My Plans / New</h1> -->
+<div><%- include('partials/navigation/breadcrumbs') -%></div>
+<div class="body-container">
+  <div class="left-section">
+    <!--  FORM START  -->
+    <form action="/users/signup" method="POST" name="signupForm">
+      <label for="firstName">First Name</label>
+      <input name="firstName" id="firstName" type="text" />
+      <label for="lastName">Last Name</label>
+      <input name="lastName" id="lastName" type="text" />
+      <label for="email">Email</label>
+      <input name="email" id="email" type="text" />
+
+      <input name=submitNewUser" type="submit" value="Submit"/>
+    </form>
+    <!--  FORM END  -->
+
+    <div class="right-section">
+      <div class="google-maps"></div>
+      <div class="weather">
+        <!-- Event List -->
+        <ul id="eventList"></ul>
+      </div>
+    </div>
+  </div>
+  <%- include('partials/footer') -%>
+</div>

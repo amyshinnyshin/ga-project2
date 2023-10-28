@@ -9,6 +9,8 @@ const app = express();
 
 //--------------  Import CSS &/or JSON ----------------//
 app.use(express.static('public'));
+
+console.log('dirname', __dirname);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -29,11 +31,13 @@ const startServer = async () => {
   });
 };
 
-
 //--------------  Routes Middleware  ----------------//
 
 const travelPlansRouter = require('./routers/travelPlansRouter.js');
+const usersRouter = require('./routers/usersRouter.js');
 
 app.use('/travelplans', travelPlansRouter);
+
+app.use('/users', usersRouter);
 
 startServer();
