@@ -2,15 +2,16 @@ const express = require('express');
 const { User } = require('../models/user.js');
 const router = express.Router();
 
-const { signup, allUsers } = require('../controllers/usersController');
+const { signup, allUsers, updateUserById } = require('../controllers/usersController');
 
-//GET single user by id route
+//--------------  READ: GET single user by id route  ----------------//
 
-//GET all users router
+//--------------   READ: GET all users router  ----------------//
+
 router.get('/', allUsers);
 
-//CREATE new user route
-// returns form
+//--------------  CREATE new user route  ----------------//
+// returns create user form
 router.get('/newuser', async (req, res) => {
   console.log('Now creating a new user');
   res.render('./newUserForm.ejs'); // starts at views
@@ -19,8 +20,12 @@ router.get('/newuser', async (req, res) => {
 // sends data to DB
 router.post('/signup', signup);
 
-//UPDATE user by id route
+//--------------   UPDATE user by id route  ----------------//
+// get edit form
+router.get('/updateuser/:id', (req, res) => {
+  res.render('./updateUserForm.ejs');
+});
 
-//DELETE user by id route
+//--------------   DELETE user by id route  ----------------//
 
 module.exports = router;

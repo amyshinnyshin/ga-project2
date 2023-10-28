@@ -22,19 +22,17 @@ router.post('/', async (req, res) => {
   const newPlan = await Plan.create(req.body);
   res.json(newPlan);
 
-//UPDATE travelPlan by id route
-router.put('/:id', async (req, res) => {
-  await Plan.findByIdAndUpdate(req.params.id, req.body);
-  res.redirect('/travelplans/' + req.params.id);
-});
+  //UPDATE travelPlan by id route
+  router.put('/:id', async (req, res) => {
+    await Plan.findByIdAndUpdate(req.params.id, req.body);
+    res.redirect('/travelplans/' + req.params.id);
+  });
 
-//DELETE travel by id route
-router.delete('/:id', async (req, res) => {
-  await Plan.findByIdAndRemove(req.params.id);
-  res.redirect('/travelplans');
-});
-
-
+  //DELETE travel by id route
+  router.delete('/:id', async (req, res) => {
+    await Plan.findByIdAndRemove(req.params.id);
+    res.redirect('/travelplans');
+  });
 });
 
 router.get('/new', (req, res) => {
