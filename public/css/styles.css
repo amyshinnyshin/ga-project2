@@ -406,17 +406,26 @@ ul {
 
 #leftNav li.left-nav-item {
   display: flex;
-  padding: 12px 24px 12px 40px;
+  padding: 12px 24px 12px 32px;
   align-items: center;
-  gap: 8px;
   align-self: stretch;
   border-radius: 0px 24px 24px 0px;
 }
+
 
 #leftNav li.left-nav-item:hover {
   background: var(--black-200, #D1D1D1);
   transition: background-color 0.3s;
 } 
+
+.menu-group{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 0 0;
+  text-decoration: none;
+  color: var(--black-950, #050505);
+}
 
 .active-nav-button {
   background: var(--black-100, #E7E7E7);
