@@ -16,10 +16,10 @@ router.post('/', async (req, res) => {
   // send to browser acknowledgement: redirect to homepage (with note?)
 
 
-//UPDATE user by id route
+//UPDATE travelPlan by id route
 
 
-//DELETE user by id route
+//DELETE travelPlan by id route
 });
 
 router.get('/new', (req, res) => {
