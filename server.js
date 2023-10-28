@@ -53,10 +53,13 @@ const startServer = async () => {
 
 const travelPlansRouter = require('./routers/travelPlansRouter.js');
 const usersRouter = require('./routers/usersRouter.js');
+const dashboardRouter = require('./routers/dashboardRouter.js');
 
 app.use('/users', dashboardRouter);
 app.use('/travelplans', travelPlansRouter);
 
 app.use('/users', usersRouter);
+
+app.use('/', dashboardRouter);
 
 startServer();
