@@ -22,6 +22,8 @@ const {} = require('./controllers/dashboardController.js');
 //--------------  Import CSS &/or JSON ----------------//
 
 app.use(express.static('public'));
+
+console.log('dirname', __dirname);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // app.use('/css', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/css')));
@@ -47,23 +49,14 @@ const startServer = async () => {
   });
 };
 
-//
-// router.get('/travelplan', (req, res) => {
-//     res.render('partials/travelplan', { title: 'My Plans / Newe' });
-//   });
-
 //--------------  Routes Middleware  ----------------//
 
-
-const dashboardRouter = require('./routes/dashboardRouter.js');
-const travelplanRouter = require('./routes/travelplanRouter.js');
-
+const travelPlansRouter = require('./routers/travelPlansRouter.js');
+const usersRouter = require('./routers/usersRouter.js');
 
 app.use('/users', dashboardRouter);
 app.use('/travelplans', travelPlansRouter);
 
-// const travelPlansRouter = require( './routes/travelPlansRouter');
-
-app.use('/', travelPlansRouter);
+app.use('/users', usersRouter);
 
 startServer();
