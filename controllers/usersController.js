@@ -10,7 +10,9 @@ const { DATABASE_URL, PORT } = require('../config');
 const { User } = require('../models/user'); // importing USER model
 
 //--------------  CRUD  ----------------//
+//--------------  CRUD  ----------------//
 
+//--------------  CREATE new user  ----------------//
 //--------------  CREATE new user  ----------------//
 
 function signup(req, res, next) {
@@ -78,8 +80,8 @@ function updateUserInDB(req, res, next) {
   console.log(req.body);
 
   const { _id, firstName, lastName, email } = req.body;
-    console.log('2.', req.body);
-    const updatedUser = { firstName, lastName };
+  console.log('2.', req.body);
+  const updatedUser = { firstName, lastName };
 
   User.findOneAndUpdate({ id: req.body._id }, updatedUser);
 
