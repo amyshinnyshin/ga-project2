@@ -50,6 +50,13 @@ function allUsers() {
     });
   };
 }
+function allUsers() {
+  const userlist = (req, res, next) => {
+    User.find({}).then((users) => {
+      res.render('users.ejs', { users });
+    });
+  };
+}
 
 //--------------  READ single user Profile  ----------------//
 
