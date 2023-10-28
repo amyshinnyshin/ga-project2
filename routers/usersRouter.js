@@ -2,7 +2,7 @@ const express = require('express');
 const { User } = require('../models/user.js');
 const router = express.Router();
 
-const { signup, allUsers, updateUserById } = require('../controllers/usersController');
+const { signup, allUsers, updateUserById, updateUserInDB } = require('../controllers/usersController');
 
 //--------------  READ: GET single user by id route  ----------------//
 
@@ -22,9 +22,11 @@ router.post('/signup', signup);
 
 //--------------   UPDATE user by id route  ----------------//
 // get edit form
-router.get('/updateuser/:id', (req, res) => {
-  res.render('./updateUserForm.ejs');
-});
+router.get('/updateuser/:id', updateUserById);
+
+//--------------  Update user via PUT edit form  ----------------//
+
+router.post('/update', updateUserInDB);
 
 //--------------   DELETE user by id route  ----------------//
 
