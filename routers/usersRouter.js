@@ -4,12 +4,10 @@ const router = express.Router();
 
 const { signup, allUsers } = require('../controllers/usersController');
 
-//GET user by id route
+//GET single user by id route
 
 //GET all users router
 router.get('/', allUsers);
-
-//CREATE new user route
 
 //CREATE new user route
 // returns form
