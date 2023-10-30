@@ -6,6 +6,7 @@ const { signup, allUsers, updateUserById, updateUserInDB } = require('../control
 
 //--------------  READ: GET single user by id route  ----------------//
 
+//GET single user by id route
 //--------------   READ: GET all users router  ----------------//
 
 router.get('/', allUsers);
