@@ -254,19 +254,22 @@ ul.breadcrumbs {
   z-index: 1;
 }
 .topbar-inner {
-  display: flex;
-  width: 100%;
-  padding: 0 32px;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  display: flex;
+  flex-direction: row;
   height: 72px;
+  justify-content: space-between;
+  padding: 0 32px;
+  width: 100%;
 }
 
-.brand-logo {
+.brand-logo,
+.brand-logo a {
+  align-items: flex-start;
+  color: black;
   display: flex;
-  align-items: center;
   gap: 8px;
+  text-decoration: none;
 }
 .planelogo {
   width: 40px;
@@ -367,6 +370,7 @@ ul {
 }
 
 #leftNav li.left-nav-item {
+  cursor: pointer;
   display: flex;
   padding: 12px 24px 12px 40px;
   align-items: flex-start;

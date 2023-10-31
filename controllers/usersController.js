@@ -80,7 +80,7 @@ function updateUserInDB(req, res, next) {
 
   User.findOneAndUpdate({ id: req.body._id }, updatedUser);
 
-  res.redirect('/');
+  res.redirect('/users');
 }
 
 //--------------  DELETE user  ----------------//
