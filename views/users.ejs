@@ -7,7 +7,7 @@
     <ul class="userList">
       <% for(let i = 0; i < users.length; i++) { let index = i + 1 %>
       <li>
-        <a class="a-user"> <%= users[i].firstName %> <%= users[i].lastName %> </a>
+        <a class="a-user" href="/users/updateuser/<%= users[i]._id %>"> <%= users[i].firstName %> <%= users[i].lastName %> </a>
       </li>
       <% } %>
     </ul>
