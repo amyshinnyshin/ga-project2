@@ -3,7 +3,7 @@
 :root {
   --bg-grey: #f6f6f6;
   --bg-grey-hover: #e7e7e7;
-  --bg-purple: #2D3682;
+  --bg-purple: #2d3682;
 }
 
 /* ICONS */
@@ -13,10 +13,10 @@
 }
 
 /* MAIN CSS */
-body{
+body {
   font-family: 'Outfit', sans-serif;
   color: #050505;
-  margin: 72px 0px 0px 296px;  
+  margin: 72px 0px 0px 296px;
   height: calc(100vh - 72px);
   width: calc(100vw - 296px);
 }
@@ -24,20 +24,19 @@ body{
 #emptystateimage {
   height: 208px;
 }
-.page-header{
+.page-header {
   display: flex;
   width: 100%;
   padding: 24px 32px;
   align-items: center;
   position: fixed;
-  }
+}
 
 h1 {
   font-size: 40px;
   font-weight: 600;
   line-height: 48px;
-  margin: 0px
-
+  margin: 0px;
 }
 h4 {
   font-size: 24px;
@@ -46,49 +45,50 @@ h4 {
   margin: 0px;
 }
 
-p{
+p {
   font-size: 16px;
   font-weight: 300;
   line-height: 24px;
-  margin: 0px
+  margin: 0px;
 }
-.emptystate-container, .saved-plans{
+.emptystate-container,
+.saved-plans {
   /* margin-top: 108px; */
   display: flex;
   flex-direction: column;
 }
 
 /* table css */
-.saved-plans{
+.saved-plans {
   padding: 112px 32px 0px 32px;
 }
 
 thead {
-  background: #FFF;
+  background: #fff;
 }
 
-th  {
+th {
   color: var(--black-800, #454545);
   font-size: 16px;
   font-weight: 600;
-  line-height: 24px; 
+  line-height: 24px;
   padding: 12px 16px 12px 16px;
-  border-bottom: 1px solid var(--black-300, #B0B0B0);
+  border-bottom: 1px solid var(--black-300, #b0b0b0);
 }
 
 td {
-  color: 1px solid var(--black-100, #E7E7E7);
+  color: 1px solid var(--black-100, #e7e7e7);
   font-size: 16px;
   font-weight: 300;
-  line-height: 24px; 
+  line-height: 24px;
   padding: 20px 16px 20px 16px;
-  border-bottom: 1px solid var(--black-100, #E7E7E7);
+  border-bottom: 1px solid var(--black-100, #e7e7e7);
 }
-.table-plan-name{
-  width: 400px
+.table-plan-name {
+  width: 400px;
 }
 
-.actions{ 
+.actions {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -99,46 +99,43 @@ td {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-    
 }
 
-.line{
+.line {
   height: 16px;
 }
 
 .delete {
-  color: var(--guardsman-red-700, #DB0000);
+  color: var(--guardsman-red-700, #db0000);
 }
 
-
-.emptystate-container{
+.emptystate-container {
   gap: 24px;
   padding-top: 160px;
   align-items: center;
 }
 
-.emptystate-copy{
+.emptystate-copy {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
 }
 
-
-
 /* ------------------ BUTTON */
 .primary-create-button {
-  background: var(--saffron-400, #FCDD23);
+  background: var(--saffron-400, #fcdd23);
   border-radius: 24px;
   border: none;
   cursor: pointer;
 }
 
 .primary-create-button:hover {
-  background: var(--saffron-500, #F6C113);
+  background: var(--saffron-500, #f6c113);
 }
 
-.primary-button, .secondary-button {
+.primary-button,
+.secondary-button {
   display: flex;
   padding: 12px 32px;
   justify-content: center;
@@ -153,24 +150,22 @@ td {
   text-decoration: none;
 }
 .primary-button {
-  background: var(--saffron-400, #FCDD23);
+  background: var(--saffron-400, #fcdd23);
   color: var(--black-950, #050505);
 }
 
 .primary-button:hover {
-  background: var(--saffron-500, #F6C113);
+  background: var(--saffron-500, #f6c113);
 }
 
 .secondary-button {
-  background: var(--black-100, #E7E7E7);
+  background: var(--black-100, #e7e7e7);
   color: var(--black-950, #050505);
 }
 
 .secondary-button:hover {
-  background: var(--black-200, #D1D1D1);
+  background: var(--black-200, #d1d1d1);
 }
-
-
 
 .tertiary-button {
   display: flex;
@@ -179,42 +174,41 @@ td {
   border: none;
   padding: 0px;
   background: white;
-  color: #5D5D5D;
+  color: #5d5d5d;
 }
-
-
 
 .outer {
   margin: 20px;
 }
 /* BREADCRUMBS */
-#breadcrumbs ul.breadcrumbs{
+#breadcrumbs ul.breadcrumbs {
   /* border-bottom:1px solid var(--bg-grey-hover); */
-  display:flex;
+  display: flex;
+
   flex-direction: row;
-  gap:15px;
+  gap: 15px;
   justify-content: flex-start;
-  margin:0;
-  min-height:30px;
+  margin: 0;
+  min-height: 30px;
   /* padding:15px 20px; */
 }
-ul.breadcrumbs li{
+ul.breadcrumbs li {
   flex-direction: row;
 }
-ul.breadcrumbs li:after{
-  display:inline-block;
-  margin-left:10px;
-  content:'|'
+ul.breadcrumbs li:after {
+  display: inline-block;
+  margin-left: 10px;
+  content: '|';
 }
-ul.breadcrumbs li:last-of-type:after{
-  display:none;
+ul.breadcrumbs li:last-of-type:after {
+  display: none;
 }
-ul.breadcrumbs li a{
-  color:black;
+ul.breadcrumbs li a {
+  color: black;
   text-decoration: none;
 }
-ul.breadcrumbs li a:hover{
-  color:black;
+ul.breadcrumbs li a:hover {
+  color: black;
   /* text-decoration: underline; */
 }
 
@@ -228,7 +222,7 @@ ul.breadcrumbs {
   align-items: flex-start;
   gap: 8px;
   flex-direction: row;
-  margin: 0px; 
+  margin: 0px;
   padding: 0px;
 }
 
@@ -250,8 +244,8 @@ ul.breadcrumbs {
   display: inline-block;
   grid-column-start: 1;
 } */
-#topbar{
-  border-bottom: 1px solid var(--black-100, #E7E7E7);
+#topbar {
+  border-bottom: 1px solid var(--black-100, #e7e7e7);
   position: fixed;
   top: 0;
   left: 0;
@@ -259,45 +253,46 @@ ul.breadcrumbs {
   background-color: #fff; /* Set the background color as needed */
   z-index: 1;
 }
-.topbar{
+.topbar-inner {
   display: flex;
   width: 100%;
-  padding: 16px 32px;
+  padding: 0 32px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 72px
+  height: 72px;
 }
 
-.brand-logo{
+.brand-logo {
   display: flex;
   align-items: center;
   gap: 8px;
 }
-.planelogo{
+.planelogo {
   width: 40px;
   height: 40px;
 }
 
-.brand-copy{
+.brand-copy {
   font-family: Comfortaa;
   font-size: 24px;
   font-weight: 700;
-  line-height: 40px; 
+  line-height: 40px;
   -webkit-text-stroke-width: 2px;
 }
 
-#globeicon.bi.bi::before{
- padding: 0;
+#globeicon.bi.bi::before {
+  padding: 0;
 }
 
-.right-section{
+.right-section {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.explore, .back {
+.explore,
+.back {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -321,12 +316,12 @@ ul.breadcrumbs {
 
 .user-wrap {
   text-align: left;
-} 
+}
 
 /* ------------------ LEFT NAV */
 #leftNav {
-  border-right: 1px solid var(--black-100, #E7E7E7);
-  background: var(--black-50, #F6F6F6);
+  border-right: 1px solid var(--black-100, #e7e7e7);
+  background: var(--black-50, #f6f6f6);
   height: 100vh;
   padding-top: 32px;
   position: fixed;
@@ -335,16 +330,14 @@ ul.breadcrumbs {
   width: 296px;
 }
 
-
 /* button */
-#button-container{
+#button-container {
   display: flex;
   padding: 0px 32px;
   flex-direction: column;
   align-items: flex-start;
   gap: 10px;
   align-self: stretch;
-  
 }
 
 .new-plan {
@@ -383,16 +376,14 @@ ul {
 }
 
 #leftNav li.left-nav-item:hover {
-  background: var(--black-200, #D1D1D1);
+  background: var(--black-200, #d1d1d1);
   transition: background-color 0.3s;
-} 
-
-.active-nav-button {
-  background: var(--black-100, #E7E7E7);
-  font-weight: 600;
 }
 
-
+.active-nav-button {
+  background: var(--black-100, #e7e7e7);
+  font-weight: 600;
+}
 
 /*
 #leftNav li.left-nav-item {
@@ -411,8 +402,7 @@ ul {
 } */
 
 /* ------------------ TRAVEL PLAN */
-.body-container{
-  
+.body-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 24px;
@@ -422,14 +412,15 @@ ul {
   grid-column: 1 / span 8;
 }
 
-.plan-details{
+.plan-details {
   display: grid;
   padding-bottom: 24px;
-  border-bottom: 1px solid var(--black-100, #E7E7E7);
+  border-bottom: 1px solid var(--black-100, #e7e7e7);
 }
 
-
-input, textarea, label {
+input,
+textarea,
+label {
   grid-column: span 8;
 }
 
@@ -438,14 +429,15 @@ label {
   font-weight: 600;
 }
 
-input, textarea {
-  border: 1px solid var(--black-600, #5D5D5D);
+input,
+textarea {
+  border: 1px solid var(--black-600, #5d5d5d);
   border-radius: 24px;
   padding: 4px 16px 4px 16px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
-  color: var(--black-900, #3D3D3D);
+  color: var(--black-900, #3d3d3d);
 }
 input {
   height: 32px;
@@ -456,8 +448,7 @@ textarea {
   height: 160px;
 }
 
-
-.schedule-section{
+.schedule-section {
   padding-top: 24px;
   display: flex;
   flex-direction: column;
@@ -474,8 +465,8 @@ h3 {
   grid-column: 9 / span 4;
 }
 
-.google-maps{
+.google-maps {
   grid-column: 9 / span 4;
   height: 360px;
-  background-color: #5D5D5D;
+  background-color: #5d5d5d;
 }
