@@ -41,24 +41,21 @@ function signup(req, res, next) {
 
 //--------------  READ: List all users  ----------------//
 
-function allUsers() {
-  const userlist = (req, res, next) => {
-    User.find({}).then((users) => {
-      res.render('users.ejs', { users });
-    });
-  };
+async function allUsers(req, res, next) {
+  const users = await User.find({});
+  res.render('users.ejs', { users });
 }
 
 //--------------  READ single user Profile  ----------------//
 
 //--------------  UPDATE user  ----------------//
-const updateUserById = async (req, res, next) => {
+async function updateUserById(req, res, next) {
   console.log('controller updateUserById');
 
   const theUser = await User.findById(req.params.id);
   console.log('theUser', theUser);
   res.render('updateUserForm.ejs', { theUser });
-};
+}
 
 function updateUserInDB(req, res, next) {
   const requiredFields = ['_id', 'firstName', 'lastName', 'email'];
@@ -78,22 +75,12 @@ function updateUserInDB(req, res, next) {
   console.log(req.body);
 
   const { _id, firstName, lastName, email } = req.body;
-    console.log('2.', req.body);
-    const updatedUser = { firstName, lastName };
+  console.log('2.', req.body);
+  const updatedUser = { firstName, lastName };
 
   User.findOneAndUpdate({ id: req.body._id }, updatedUser);
 
-  res.render('/');
-}
-
-//--------------  READ: List all users  ----------------//
-
-function allUsers() {
-  const userlist = (req, res, next) => {
-    User.find({}).then((users) => {
-      res.render('users.ejs', { users });
-    });
-  };
+  res.redirect('/');
 }
 
 //--------------  DELETE user  ----------------//
