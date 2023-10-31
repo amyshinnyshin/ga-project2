@@ -378,6 +378,10 @@ ul {
   align-self: stretch;
   border-radius: 0px 24px 24px 0px;
 }
+.left-nav-item a {
+  text-decoration: none;
+  color: black;
+}
 
 #leftNav li.left-nav-item:hover {
   background: var(--black-200, #d1d1d1);
