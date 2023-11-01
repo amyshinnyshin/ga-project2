@@ -15,20 +15,20 @@ const { travelplans, allPlans } = require('../controllers/travelPlansController'
 // //   res.render('server.ejs', { travelPlans });
 // // });
 //
-// // CREATE - Add a new travel plan to the database
-// router.post('/', async (req, res) => {
+// CREATE - Add a new travel plan to the database
+// router.post('/createplan', async (req, res) => {
 //   console.log('You have reached the POST travelPlansRouter');
 //   console.log(req.body);
 //   const newPlan = await Plan.create(req.body);
 //   res.json(newPlan);
-//
-//   // send to browser acknowledgement: redirect to homepage (with note?)
-//
-//   // UPDATE travelPlan by id route
-//   router.put('/:id', async (req, res) => {
-//     await Plan.findByIdAndUpdate(req.params.id, req.body);
-//     res.redirect('/travelplans/' + req.params.id);
-//   });
+
+  // send to browser acknowledgement: redirect to homepage (with note?)
+
+  // // UPDATE travelPlan by id route
+  // router.put('/:id', async (req, res) => {
+  //   await Plan.findByIdAndUpdate(req.params.id, req.body);
+  //   res.redirect('/travelplans/' + req.params.id);
+  // });
 //
 //   // DELETE travel by id route
 //   router.delete('/:id', async (req, res) => {
