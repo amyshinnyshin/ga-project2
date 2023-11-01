@@ -10,6 +10,15 @@ const cancelModalButton = modalOverlay.querySelector('.cancel');
 const saveChangeButton = modalOverlay.querySelector('.save-changes');
 
 
+navButtons.forEach(navButton => {
+    const menuItemURL = navButton.querySelector('a').getAttribute('href');
+    if (currentPage === menuItemURL) {
+      navButton.classList.add('active-nav-button');
+    }else {
+      navButton.classList.remove('active-nav-button');
+    }
+  });
+  
 
 navButtons.forEach(navButton => {
     const navCopy = navButton.textContent

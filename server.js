@@ -1,12 +1,11 @@
 const express = require('express');
 const app = express();
-const ejsLayouts = require('express-ejs-layouts');
+// const ejsLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
-const path = require('path');
+// const path = require('path');
 const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
 
-const { travelplans } = require('./controllers/travelPlansController.js');
 
 //app.set('view engine', 'ejs');
 //app.use(ejsLayouts);
@@ -14,7 +13,6 @@ const { travelplans } = require('./controllers/travelPlansController.js');
 //--------------  Import Models  ----------------//
 
 //--------------  Import CSS &/or JSON ----------------//
-
 app.use(express.static('public'));
 
 console.log('dirname', __dirname);
@@ -23,7 +21,6 @@ app.use(express.urlencoded({ extended: true }));
 
 
 //--------------  Start Server  ----------------//
-
 const startServer = async () => {
   // connect to DB
   await mongoose.connect(DATABASE_URL);
@@ -44,10 +41,9 @@ const startServer = async () => {
 
 const travelPlansRouter = require('./routers/travelPlansRouter.js');
 const usersRouter = require('./routers/usersRouter.js');
-const dashboardRouter = require('./routers/dashboardRouter.js');
 
+app.use('/', hompeageRouter)
 app.use('/travelplans', travelPlansRouter);
-
 app.use('/users', usersRouter);
 
 app.use('/', dashboardRouter);
