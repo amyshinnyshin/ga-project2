@@ -41,6 +41,10 @@ router.get('/new', (req, res) => {
 });
 
 
+
+
+
+
 //------------------Events 
 
 //GET all events by route
@@ -51,14 +55,7 @@ router.get('/new', (req, res) => {
 //GET create new events modal 
 
 //Post Added event
-router.post('/travelplan/:id/events', async (req, res) => {
-  const id = req.params.id;
-  const eventData = req.body;
-  // Create and save the new event associated with the travel plan
-  const newEvent = await Event.create({ ...eventData, travelPlan: id });
-  // Redirect back to the events list or the travel plan details page
-  res.redirect(`/${id}`);
-});
+router.post('/travelplan/:id/events');
 
 
 //Get Edit event modal 
