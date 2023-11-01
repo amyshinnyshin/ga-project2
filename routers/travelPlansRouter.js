@@ -39,6 +39,7 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/new', (req, res) => {
+  res.render('newTravelPlansForm.ejs');
 });
 
 // POST
