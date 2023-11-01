@@ -1,7 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
-let breadcrumbs = require('express-breadcrumbs');
+// const path = require('path');
+const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
+const ejs = require('ejs');
+const fs = require('fs');
 
 //------creating an express server instance-----⭐
 const app = express();
@@ -14,16 +17,6 @@ app.use(express.static('public'));
 console.log('dirname', __dirname);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(breadcrumbs.init());
-app.use(breadcrumbs.setHome());
-// Mount the breadcrumbs at `/admin`
-app.use(
-  '/admin',
-  breadcrumbs.setHome({
-    name: 'Dashboard',
-    url: '/',
-  })
-);
 
 //--------------  Start Server  ----------------//
 const startServer = async () => {
@@ -46,12 +39,11 @@ const startServer = async () => {
 
 const travelPlansRouter = require('./routers/travelPlansRouter.js');
 const usersRouter = require('./routers/usersRouter.js');
-const dashboardRouter = require('./routers/dashboardRouter.js');
+const homepageRouter = require('./routers/homepageRouter.js');
 
+
+app.use('/', homepageRouter)
 app.use('/plans', travelPlansRouter);
-
 app.use('/users', usersRouter);
-
-app.use('/', dashboardRouter);
 
 startServer();
