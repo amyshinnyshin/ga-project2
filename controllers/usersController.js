@@ -11,7 +11,6 @@ const { User } = require('../models/user'); // importing USER model
 
 //--------------  CRUD  ----------------//
 
-
 //--------------  READ: List all users  ----------------//
 
 async function allUsers(req, res, next) {
@@ -21,10 +20,10 @@ async function allUsers(req, res, next) {
 
 //--------------  READ single user Profile  ----------------//
 
-async function userProfile function (req,res, next) {
-  const oneUser = User.findById(req.params.id)
-   res.render('userprofile.ejs',{ oneUser });
-};
+async function userProfile(req, res, next) {
+  const oneUser = User.findById(req.params.id);
+  res.render('userprofile.ejs', { oneUser });
+}
 
 //--------------  CREATE new user  ----------------//
 
@@ -54,7 +53,6 @@ function signup(req, res, next) {
   res.render('/');
 }
 
-
 //--------------  READ single user Profile  ----------------//
 
 //--------------  UPDATE user  ----------------//
@@ -62,8 +60,7 @@ const updateUserById = async (req, res, next) => {
   console.log('controller updateUserById');
   const theUser = await User.findById(req.params.id);
   res.render('updateUserForm.ejs', { theUser });
-}
-
+};
 
 function updateUserInDB(req, res, next) {
   const requiredFields = ['_id', 'firstName', 'lastName', 'email'];
@@ -87,11 +84,8 @@ function updateUserInDB(req, res, next) {
   User.findOneAndUpdate({ id: req.body.id }, updatedUser);
 
   res.redirect('/users');
-
 }
-
 
 //--------------  DELETE user  ----------------//
 
 module.exports = { User, signup, allUsers, updateUserById, updateUserInDB, userProfile };
-

@@ -14,7 +14,6 @@ router.get('/', allUsers);
 
 //--------------  CREATE new user route  ----------------//
 // returns create user form
-
 router.get('/newuser', async (req, res) => {
   console.log('Now creating a new user');
   res.render('./newUserForm.ejs'); // starts at views
