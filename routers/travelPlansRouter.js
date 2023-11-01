@@ -72,44 +72,6 @@ router.put('/:planId/newevent', async (req, res) => {
 //GET all events by route
 
 
-//GET events by id
-router.get('/myplan/:planId', (req, res) => {
-  const planId = req.params.planId;
-
-  Plan.findById(planId, (err, plan) => {
-    if (err) {
-      return res.status(500).json({ error: 'Internal Server Error' });
-    }
-    if (!plan) {
-      return res.status(404).json({ error: 'Plan not found' });
-    }
-    const eventList = plan.events;
-    res.json(eventList);
-  });
-});
-
-
-
-//GET create new events modal 
-
-//Post Added event
-router.post('/newtravelplan', (req, res) => {
-  const planId = req.params.planId; 
-  const eventData = req.body;
-
-  Plan.findById(planId, (err, plan) => {
-    if (err) {
-      return res.status(500).json({ error: 'Internal Server Error' });
-    }
-    plan.events.push(eventData);
-    plan.save((err, updatedPlan) => {
-      if (err) {
-        return res.status(500).json({ error: 'Failed to save plan' });
-      }
-      res.json(eventData);
-    });
-  });
-});
 
 
 
