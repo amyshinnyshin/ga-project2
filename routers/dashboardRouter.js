@@ -12,4 +12,5 @@ router.get('/sharedplans', sharedPlans);
 router.get('/favoriteplans', favoritePlans);
 router.get('/trashedplans', trashedPlans);
 
+
 module.exports = router;

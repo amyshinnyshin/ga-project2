@@ -2,7 +2,7 @@ const express = require('express');
 const { User } = require('../models/user.js');
 const router = express.Router();
 
-const { userProfile, allUsers, signup, updateUserById, updateUserInDB } = require('../controllers/usersController', 'deleteUser');
+const { userProfile, allUsers, signup, updateUserById, updateUserInDB, deleteUser } = require('../controllers/usersController');
 
 //--------------  READ: GET single user by id route  ----------------//
 
@@ -14,6 +14,7 @@ router.get('/', allUsers);
 
 //--------------  CREATE new user route  ----------------//
 // returns create user form
+
 router.get('/newuser', async (req, res) => {
   console.log('Now creating a new user');
   res.render('./newUserForm.ejs'); // starts at views

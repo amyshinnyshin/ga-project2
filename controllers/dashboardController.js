@@ -28,3 +28,4 @@ function trashedPlans(req, res, next) {
 }
 
 module.exports = { dashboard, myPlans, recentPlans, sharedPlans, favoritePlans, trashedPlans };
+
