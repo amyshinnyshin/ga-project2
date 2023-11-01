@@ -3,13 +3,15 @@ const router = express.Router();
 
 const mongoose = require('mongoose');
 
+// auth
+// const jwt = require('jsonwebtoken');
+
 //Instead of using mongoose's promise-like system, we'll be using Javascript's promise system:
 mongoose.Promise = global.Promise;
 
 const { DATABASE_URL, PORT } = require('../config');
 const { User } = require('../models/user'); // importing USER model
 
-//--------------  CRUD  ----------------//
 
 //--------------  READ: List all users  ----------------//
 

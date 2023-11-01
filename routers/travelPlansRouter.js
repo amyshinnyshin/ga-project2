@@ -39,8 +39,19 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-  console.log('You have reached the send new travelplans form');
-  res.render('./newTravelPlanForm.ejs');
+});
+
+// POST
+router.post('/:planId', async (req, res) => {
+  console.log("You've created a new travel plan with an empty model");
+  try {
+    const newPlanData = req.body;
+    const newPlan = await Plan.create(newPlanData);
+    res.status(201).json(newPlan);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
 
 module.exports = router;
