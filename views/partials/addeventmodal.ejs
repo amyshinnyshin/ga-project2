@@ -1,0 +1,49 @@
+<div class="modal-overlay">
+  <!-- MODAL -->
+  <form id="addEventForm" action="/:planId/newevent" method="POST" class="template-modal" tabindex="-1" role="dialog">
+    <div class="template-modal-content">
+      
+      <!-- modal-body -->
+      <div class="template-modal-body-container">
+        <!-- modal header -->
+        <div class="template-modal-header">
+          <h2 class="template-modal-title"><%= modalTitle %></h2>
+          <button type="button" class="close">
+            <span><img class="icons close" src="/img/xmark.png" alt=""></span>
+          </button>
+        </div>
+
+        <div class="events-modal-body">
+          <label for="eventName">Event Name</label>
+          <input type="text" id="eventName" id="eventName" required />
+        
+          <div class="datetime-group">
+            <div class="datetime date">
+              <label for="eventDate">Date:</label>
+              <input type="date" id="eventDate" name="eventDate" required>
+            </div>
+            <div class="datetime time">
+              <label for="startTime">Start Time:</label>
+              <input type="time" id="startTime" name="startTime" min="00:00" max="23:59">
+            </div>
+            <div class="datetime time">
+              <label for="endTime">End Time:</label>
+              <input type="time" id="endTime" name="endTime" min="00:00" max="23:59">
+            </div>
+          </div>
+            
+          <label for="eventdescription">Description</label>
+          <textarea id="eventdescription" name="description" rows="4" required></textarea>
+        </div>
+      </div>
+
+      <!-- modal-footer -->
+      <div class="template-modal-footer">
+        <div class="button-group">
+            <button type="button" class="tertiary-button cancel">Cancel</button>
+            <input type="submit" value="Save Changes" class="primary-button save-changes">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,12 +1,33 @@
 <nav id="leftNav">
   <div id="button-container">
-    <button class="primary-button new-plan"><i class="bi bi-plus-lg" ></i></i>New Plan</button>
-  </div>  
-  <ul>
-    <li class="left-nav-item lnav-plans"><i class="bi bi-clipboard"></i>My Plans</li>
-    <li class="left-nav-item lnav-recent"><i class="bi bi-clock"></i>Recent</li>
-    <li class="left-nav-item lnav-favorite"><i class="bi bi-heart"></i>Favorites</li>
-    <li class="left-nav-item lnav-shared"><i class="bi bi-people"></i>Shared</li>
-    <li class="left-nav-item lnav-trash"><i class="bi bi-trash"></i>Trash</li>
+    <a href="plans/new" class="primary-create-button new-plan">New Plan</a>
+  </div>
+  <ul class="navigation-menu">
+    <li class="left-nav-item lnav-plans">
+      <a href="/" class="menu-group">
+        <span><img src="/img/clipboard-list-check.png" alt="" class="icons clipboard"></span>My Plans
+      </a>
+    </li>
+    <li class="left-nav-item lnav-recent">
+      <a href="/recent" class="menu-group">
+        <span><img src="/img/clock-five.png" alt="" class="icons recent"></span>Recent
+      </a>
+    </li>
+    <li class="left-nav-item lnav-favorite">
+      <a href="/favorite" class="menu-group">
+        <span><img src="/img/heart.png" alt="" class="icons favorite"></span>Favorites
+      </a>
+    </li>
+    <li class="left-nav-item lnav-shared">
+      <a href="/users" class="menu-group">
+        <span><img src="/img/user-group.png" alt="" class="icons shared"></span>Users
+      </a>
+    </li>
+    <li class="left-nav-item lnav-trash">
+      <a href="/trash" class="menu-group">
+        <span><img src="/img/trash-can.png" alt="" class="icons trash"></span>Trash
+      </a>
+    </li>
   </ul>
 </nav>
+

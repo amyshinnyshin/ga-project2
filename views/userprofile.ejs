@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+<div><%- include('partials/navigation/breadcrumbs') -%></div>
+<div class="body-container">
+  <h1>User Profile for <%= oneUser.firstName %>:</h1>
+  <dl>
+    <dt>Name:</dt>
+    <dd><%= oneUser.firstName %><%= oneUser.lastName %></dd>
+    <dt>Email:</dt>
+    <dd><%= oneUser.email %></dd>
+    <dt>Plans:</dt>
+    <dd>Plans go here</dd>
+  </dl>
+</div>
+
+<%- include('partials/footer') -%>

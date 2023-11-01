@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+
+<div><%- include('partials/navigation/breadcrumbs') -%></div>
+<div class="body-container">
+  <h1>Users</h1>
+  <div class="left-section">
+    <ul class="userList">
+      <% for(let i = 0; i < users.length; i++) { let index = i + 1 %>
+      <li>
+
+        <p>
+          <%= users[i].firstName %> <%= users[i].lastName %>
+          <span> <a class="a-user" href="/users/:id/<%= users[i]._id %>"> View User Profile </a></span>
+          <span> <a class="a-user" href="/users/updateuser/<%= users[i]._id %>"> Edit User </a></span>
+        </p>
+
+      </li>
+      <% } %>
+    </ul>
+  </div>
+
+  <div class="right-section">
+    <div class="google-maps"></div>
+    <div class="weather"></div>
+    <!-- Event List -->
+    <ul id="eventList"></ul>
+  </div>
+  <%- include('partials/footer') -%>
+</div>
+<% console.log(users) %>

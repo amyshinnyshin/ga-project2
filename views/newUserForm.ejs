@@ -1,0 +1,18 @@
+<%- include('partials/header') -%>
+<div class="new-user-body-container">
+    <!--  FORM START  -->
+    <div class="left-section">
+      <form action="/users/signup" method="POST" name="signupForm">
+        <label for="firstName">First Name</label>
+        <input name="firstName" id="firstName" type="text" />
+        <label for="lastName">Last Name</label>
+        <input name="lastName" id="lastName" type="text" />
+        <label for="email">Email</label>
+        <input name="email" id="email" type="text" />
+
+        <input name="submitNewUser" type="submit" value="Submit"/>
+      </form>
+    </div>
+    <!--  FORM END  -->
+  <%- include('partials/footer') -%>
+</div>
