@@ -13,6 +13,7 @@
 }
 
 /* MAIN CSS */
+
 body{
   font-family: 'Outfit', sans-serif;
   color: #050505;
@@ -24,13 +25,20 @@ body{
 #emptystateimage {
   height: 208px;
 }
+
+.mainbody-section{
+  position: relative;
+  padding: 0;
+}
+
 .page-header{
-  display: flex;
-  width: 100%;
-  padding: 24px 32px;
-  align-items: center;
-  position: fixed;
-  }
+  padding: 24px 32px 12px 32px;
+  position: sticky;
+  display: block;
+  background-color: white;
+  border-left: 1px solid var(--black-100, #E7E7E7);
+}
+
 
 h1 {
   font-size: 40px;
@@ -132,6 +140,7 @@ td {
   border-radius: 24px;
   border: none;
   cursor: pointer;
+  font-family: 'Outfit';
 }
 
 .primary-create-button:hover {
@@ -155,6 +164,7 @@ td {
 .primary-button {
   background: var(--saffron-400, #FCDD23);
   color: var(--black-950, #050505);
+  font-family: 'Outfit';
 }
 
 .primary-button:hover {
@@ -178,8 +188,32 @@ td {
   gap: 8px;
   border: none;
   padding: 0px;
-  background: white;
-  color: #5D5D5D;
+  background-color: white;
+  font-family: 'Outfit';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.add-tertiary-button {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border: none;
+  padding: 0px;
+  background-color: white;
+  color: var(--black-600, #5D5D5D);
+  font-family: 'Outfit';
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 32px;
 }
 
 
@@ -188,6 +222,10 @@ td {
   margin: 20px;
 }
 /* BREADCRUMBS */
+#breadcrumbs{
+  position: sticky;
+  top: 0;
+}
 #breadcrumbs ul.breadcrumbs{
   /* border-bottom:1px solid var(--bg-grey-hover); */
   display:flex;
@@ -221,11 +259,12 @@ ul.breadcrumbs li a:hover{
 /* ------------------ BREADCRUMBS */
 #breadcrumbs {
   padding: 16px 32px 16px 32px;
+  /* position: fixed; */
 }
 
 ul.breadcrumbs {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   flex-direction: row;
   margin: 0px; 
@@ -237,36 +276,22 @@ ul.breadcrumbs {
 }
 
 /* ------------------ TOP NAV */
-/* .topbar {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-} */
-/* .explore {
-  display: inline-block;
-  grid-column-start: 11;
-  text-align: right;
-} */
-/* .logo {
-  display: inline-block;
-  grid-column-start: 1;
-} */
 #topbar{
   border-bottom: 1px solid var(--black-100, #E7E7E7);
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
   background-color: #fff; /* Set the background color as needed */
   z-index: 1;
+  width: 100vw;
+  height: 72px;
 }
 .topbar{
   display: flex;
-  width: 100%;
-  padding: 16px 32px;
+  padding: 16px 32px 16px 32px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 72px
 }
 
 .brand-logo{
@@ -360,6 +385,12 @@ ul.breadcrumbs {
   line-height: 24px; /* 150% */
 }
 
+.icons {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
 ul {
   list-style-type: none;
   display: flex;
@@ -376,7 +407,7 @@ ul {
 #leftNav li.left-nav-item {
   display: flex;
   padding: 12px 24px 12px 40px;
-  align-items: flex-start;
+  align-items: center;
   gap: 8px;
   align-self: stretch;
   border-radius: 0px 24px 24px 0px;
@@ -393,31 +424,15 @@ ul {
 }
 
 
-
-/*
-#leftNav li.left-nav-item {
-  border-bottom-right-radius: 25px;
-  border-top-right-radius: 25px;
-  cursor: pointer;
-  display: block;
-  margin: 30px 30px 0 0;
-  padding: 10px 0 10px 25px;
-  transition: background-color 0.3s;
-}
-
-#leftNav li.left-nav-item:hover {
-  background: var(--bg-grey-hover);
-  transition: background-color 0.3s;
-} */
-
 /* ------------------ TRAVEL PLAN */
 .body-container{
-  
   display: grid;
+  position: relative;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 24px;
-  padding: 24px 32px 24px 32px;
+  padding: 12px 32px 24px 32px;
 }
+
 .left-section {
   grid-column: 1 / span 8;
 }
@@ -436,12 +451,12 @@ input, textarea, label {
 label {
   margin-bottom: 2px;
   font-weight: 600;
+  line-height: 24px;
 }
 
 input, textarea {
   border: 1px solid var(--black-600, #5D5D5D);
   border-radius: 24px;
-  padding: 4px 16px 4px 16px;
   font-size: 16px;
   line-height: 24px;
   font-weight: 300;
@@ -450,10 +465,12 @@ input, textarea {
 input {
   height: 32px;
   margin-bottom: 12px;
+  padding: 4px 16px 4px 16px;
 }
 
 textarea {
   height: 160px;
+  padding: 8px 16px 8px 16px;
 }
 
 
@@ -468,6 +485,7 @@ h3 {
   font-size: 20px;
   font-weight: 600;
   line-height: 24px;
+  margin: 0;
 }
 
 .right-section {
@@ -478,4 +496,9 @@ h3 {
   grid-column: 9 / span 4;
   height: 360px;
   background-color: #5D5D5D;
+}
+
+.userList {
+  margin: 0px;
+  padding: 0px;
 }

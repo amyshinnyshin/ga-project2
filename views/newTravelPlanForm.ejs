@@ -1,64 +1,55 @@
   <%- include('partials/header') -%>
-<!-- <h1>My Plans / New</h1> -->
 <div>
   <%- include('partials/navigation/breadcrumbs') -%>
 </div>
-<div class="body-container">
-  <div class="left-section">
+<div class="mainbody-section">
+  <div class="body-container">
+    <div class="left-section">
 
-          <!--  FORM START  -->
-          <!--    action=noun | method=verb -->
-          <!--   Create Read Update Delete   -->
-        <form class="plan-details" action="/travelplans" method="POST">
-          <!-- Travel Plan Name -->
-          <label for="planName">Plan Name</label>
-          <input type="text" id="planName" name="planName" required />
+            <!--  FORM START  -->
+            <!--    action=noun | method=verb -->
+            <!--   Create Read Update Delete   -->
+          <form class="plan-details" action="/travelplans" method="POST">
+            <!-- Travel Plan Name -->
+            <label for="planName">Plan Name</label>
+            <input type="text" id="planName" name="planName" required />
 
-          <!-- Location -->
-          <label for="location">Location</label>
-          <input type="text" id="location" name="location" required />
+            <!-- Location -->
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" required />
 
-          <!-- Description -->
-          <label for="description">Description</label>
-          <textarea id="description" name="description" rows="4" required></textarea>
-          <input type="submit" value="Submit"/>
-        </form>
+            <!-- Description -->
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+            <!-- <input type="submit" value="Submit"/> -->
+          </form>
 
 
-      <div class="schedule-section">
-      <h3>Schedule</h3>
+        <div class="schedule-section">
+        <h3>Schedule</h3>
 
-      <!-- Add Event Button -->
-        <button class="tertiary-button" type="button" id="addEventButton"><i class="bi bi-plus-lg" ></i></i>Add Event</button>
-        <%- include('partials/modal-layout', { modalTitle: 'Add Event'}) -%>
-        <!-- Event List -->
-        <ul id="eventList"></ul>
+        <!-- Add Event Button -->
+          <button class="add-tertiary-button" type="button" id="addEventButton"><span><img src="/img/plus-light.png" alt="" class="icons plus"></span>Add Event</button>
+          <%- include('partials/modal-layout', { modalTitle: 'Add Event'}) -%>
+          <!-- Event List -->
+          <ul id="eventList"></ul>
 
-        
+          
+        </div>
+        <!-- Save Button -->
+        <div class="form-buttons">
+          <button class="primary-button" type="submit">Save</button>
+          <button class="tertiary-button">Cancel</button>
+        </div>
+    
       </div>
-      <!-- Save Button -->
-      <button class="primary-button" type="submit">Save</button>
-  </div>
-  <div class="right-section">
-    <div class="google-maps">
+    <div class="right-section">
+      <div class="google-maps">
 
-    </div>
-    <div class="weather">
-
-    <!-- Event List -->
-    <ul id="eventList"></ul>
-
-        <form action = "/createnewplan" method="POST">
-          <label for="name">Plan Name: </label>
-          <input type="text" name="name" id="name" required />
-          <label for="location">Location: </label>
-          <input type="text" name="location" id="location" required />
-          <label for="description">Description: </label>
-          <textarea name="description" id="description" required />
-            <!-- Save Button -->
-           <button type="submit">Save</button>  
-        </form> 
-
+      </div>
+      <div class="weather">
+      
+      </div>
     </div>
   </div>
 </div>
