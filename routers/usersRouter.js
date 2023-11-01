@@ -21,13 +21,7 @@ router.get('/newuser', async (req, res) => {
 // sends data to DB
 router.post('/signup', signup);
 
-//--------------   UPDATE user by id route  ----------------//
-// get edit form
-router.get('/updateuser/:id', updateUserById);
-
-//--------------  Update user via PUT edit form  ----------------//
-
-router.post('/update', updateUserInDB);
+//UPDATE user by id route
 
 //--------------   DELETE user by id route  ----------------//
 

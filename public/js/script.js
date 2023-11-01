@@ -32,9 +32,15 @@ navButtons.forEach(navButton => {
 //     modalOverlay.style.display = 'block';
 // }
 
-// function closeModal() {
-//     modalOverlay.style.display = 'none';
-// }
+
+//-----OPEN & CLOSE MODALS
+function openModal() {
+    modalOverlay.style.display = 'block';
+}
+
+function closeModal() {
+    modalOverlay.style.display = 'none';
+}
 
 addEventButton.addEventListener('click', openModal);
 closeModalButton.addEventListener('click', closeModal);

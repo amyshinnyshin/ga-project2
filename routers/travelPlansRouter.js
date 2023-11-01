@@ -40,4 +40,39 @@ router.get('/new', (req, res) => {
   res.render('./newTravelPlanForm.ejs');
 });
 
+
+//------------------Events 
+
+//GET all events by route
+
+
+//GET events by id
+
+//GET create new events modal 
+
+//Post Added event
+router.post('/travelplan/:id/events', async (req, res) => {
+  const id = req.params.id;
+  const eventData = req.body;
+  // Create and save the new event associated with the travel plan
+  const newEvent = await Event.create({ ...eventData, travelPlan: id });
+  // Redirect back to the events list or the travel plan details page
+  res.redirect(`/${id}`);
+});
+
+
+//Get Edit event modal 
+
+//Post Update events modal 
+
+//Post Delete events modal 
+
+
+
+
+
+
+
+
+
 module.exports = router;
