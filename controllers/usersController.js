@@ -90,9 +90,16 @@ function updateUserInDB(req, res, next) {
 
 //--------------  DELETE user  ----------------//
 
-async function deleteUser(req,res){
-  await User.findOneAndDelete({id:req.body.id});
-  res.redirect('/users');
-}
+ // function deleteUser(req, res, next){
+ //  // const delUser = await User.findById(req.params.id);
+ //  await User.deleteOne(req.params.id);
+ //  res.redirect('/users');
+   const deleteUser = async (req, res, next) => {
+     console.log('controller delete user');
+     await User.findByIdAndRemove(req.params.id);
+     res.redirect('/users');
+   };
+
+
 
 module.exports = { User, signup, allUsers, updateUserById, updateUserInDB, userProfile, deleteUser };

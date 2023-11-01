@@ -33,7 +33,7 @@ router.post('/update', updateUserInDB);
 
 //--------------   DELETE user by id route  ----------------//
 
-router.post('/delete/:id', deleteUser);
+router.delete('/delete/:id', deleteUser);
 
 //--------------  And .... export the module  ----------------//
 
