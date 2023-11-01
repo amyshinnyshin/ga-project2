@@ -8,6 +8,7 @@ const { DATABASE_URL, PORT } = require('./config.js');
 const ejs = require('ejs')
 const fs = require('fs');
 
+console.log(DATABASE_URL)
 
 //app.set('view engine', 'ejs');
 //app.use(ejsLayouts);
@@ -26,7 +27,7 @@ app.use(express.urlencoded({ extended: true }));
 const startServer = async () => {
   // connect to DB
   await mongoose.connect(DATABASE_URL);
-
+  
   mongoose.connection.on('connected', () => {
     console.log('Connected to ' + DATABASE_URL);
   });
@@ -49,7 +50,5 @@ const homepageRouter = require('./routers/homepageRouter.js');
 app.use('/', homepageRouter)
 app.use('/plans', travelPlansRouter);
 app.use('/users', usersRouter);
-
-app.use('/', dashboardRouter);
 
 startServer();
