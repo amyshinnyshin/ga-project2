@@ -23,7 +23,7 @@ async function allUsers(req, res, next) {
 //--------------  READ single user Profile  ----------------//
 
 async function userProfile(req, res, next) {
-  const oneUser = User.findById(req.params.id);
+  const oneUser = await User.findById(req.params.id);
   res.render('userprofile.ejs', { oneUser });
 }
 
