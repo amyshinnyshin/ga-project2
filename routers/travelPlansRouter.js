@@ -11,30 +11,80 @@ router.get('/:id', async (req, res) => {
 });
 
 //GET all travelplans route
-router.get('/', async (req, res) => {
-  const travelPlans = await Plan.find();
-  res.render('server.ejs', { travelPlans });
+router.get('/', travelplans);
+
+//-----consider making an actual event model....
+//
+// router.post('/', async (req, res) => {
+//   console.log('You have reached the POST TravelPlansRoute');
+//   console.log(req.body); 
+//   const newPlan = await Plan.create(req.body);
+//   res.json(newEvent);
+// });
+
+
+// GET 
+router.get('/new', (req, res) => {
+  console.log('You have reached the send new travel plans form');
+  res.render('./newTravelPlanForm.ejs');
 });
 
-// CREATE - Add a new travel plan to the database
-router.post('/', async (req, res) => {
-  console.log('You have reached the POST travelPlansRouter');
-  console.log(req.body);
-  const newPlan = await Plan.create(req.body);
-  res.json(newPlan);
-
-  //UPDATE travelPlan by id route
-  router.put('/:id', async (req, res) => {
-    await Plan.findByIdAndUpdate(req.params.id, req.body);
-    res.redirect('/travelplans/' + req.params.id);
-  });
-
-  //DELETE travel by id route
-  router.delete('/:id', async (req, res) => {
-    await Plan.findByIdAndRemove(req.params.id);
-    res.redirect('/travelplans');
-  });
+// POST
+router.post('/:planId', async (req, res) => {
+  console.log("You've created a new travel plan with an empty model");
+  try {
+    const newPlanData = req.body;
+    const newPlan = await Plan.create(newPlanData);
+    res.status(201).json(newPlan); 
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
 });
+
+
+
+
+
+// // Route to update an existing plan within a specific plan
+// router.put('/:planId/update', async (req, res) => {
+//   const planId = req.params.planId;
+  
+//   try {
+//     const updatedData = {
+//       planName: req.body.planName,
+//       location: req.body.location,
+//       description: req.body.description,
+//       events: [eventSchema],
+//     };
+
+//     const updatedPlan = await Plan.findByIdAndUpdate(planId, updatedData, { new: true });
+//     console.log("Updated Plan") 
+
+//     if (!updatedPlan) {
+//       return res.status(404).json({ error: 'Plan not found' });
+//     }
+
+//     res.status(200).json(updatedPlan);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'Internal server error' });
+//   }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+//--------------------------------------------WHAT DAVID HELPED WITH 😆
 
 router.get('/new', (req, res) => {
   console.log('You have reached the send new travelplans form');

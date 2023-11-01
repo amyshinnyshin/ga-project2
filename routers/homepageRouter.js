@@ -20,29 +20,5 @@ router.get('/', async (req, res) =>{
 //     res.redirect('/')
 // })
 
-//GET Edit Travel Plan Page 
-router.get('/edit/:id', (req, res) => {
-    const travelPlanId = req.params.id;
-    console.log('Editing Travel Plan by ID');
-
-    res.render(`/edit/{travelPlanId}`)//How to render the same travel plan
-})
-
-
-//POST Update Travel Plans
-router.post('/update/:id', (req, res) =>{
-    const travelPlanId = req.params.id;
-    console.log('Updating Travel Plan');
-    res.redirect(`/update/${travelPlanId}`);
-})
-
-
-//POST Delete Travel Plans
-router.post('/delete/:id', (req, res) => {
-    const travelPlanId = req.params.id;
-    console.log('Deleting Travel Plan');
-    res.redirect('/')
-}) 
-
 
 module.exports = router;
