@@ -1,6 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+// const path = require('path');
+const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
+const ejs = require('ejs');
+const fs = require('fs');
 
 //------creating an express server instance-----⭐
 const app = express();
@@ -35,12 +39,11 @@ const startServer = async () => {
 
 const travelPlansRouter = require('./routers/travelPlansRouter.js');
 const usersRouter = require('./routers/usersRouter.js');
-const dashboardRouter = require('./routers/dashboardRouter.js');
+const homepageRouter = require('./routers/homepageRouter.js');
 
-app.use('/travelplans', travelPlansRouter);
 
+app.use('/', homepageRouter)
+app.use('/plans', travelPlansRouter);
 app.use('/users', usersRouter);
-
-app.use('/', dashboardRouter);
 
 startServer();
