@@ -7,7 +7,13 @@
     <ul class="userList">
       <% for(let i = 0; i < users.length; i++) { let index = i + 1 %>
       <li>
-        <a class="a-user" href="/users/updateuser/<%= users[i]._id %>"> <%= users[i].firstName %> <%= users[i].lastName %> </a>
+
+        <p>
+          <%= users[i].firstName %> <%= users[i].lastName %>
+          <span> <a class="a-user" href="/users/:id/<%= users[i]._id %>"> View User Profile </a></span>
+          <span> <a class="a-user" href="/users/updateuser/<%= users[i]._id %>"> Edit User </a></span>
+        </p>
+
       </li>
       <% } %>
     </ul>
@@ -21,4 +27,3 @@
   </div>
   <%- include('partials/footer') -%>
 </div>
-<% console.log(users) %>
