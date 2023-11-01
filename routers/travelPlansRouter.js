@@ -3,6 +3,7 @@ const router = express.Router();
 const { Plan } = require('../models/plan');
 const { travelplans } = require('../controllers/travelPlansController');
 
+
 //GET travelplan by id route
 router.get('/:id', async (req, res) => {
   const travelPlans = await Plan.findById(req.params.id);
@@ -40,7 +41,28 @@ router.get('/new', (req, res) => {
   res.render('./newTravelPlanForm.ejs');
 });
 
+//-----consider making an actual event model....
+router.put('/:planId/:eventId', async (req, res) =>{
+  console.log("You've reach the updated plan by ID.");
+  const updatedEventData = req.body;
+  const planUpdate = await Plan.findOneAndUpdate({"events._id":mongoose.Types.ObjectId(req.params.eventId)}, {$set:{"events.$": updatedEventData}}, { new: true, useFindAndModify: false })
+  console.log(planUpdate);
+})
 
+
+
+router.put('/:planId/newevent', async (req, res) => {
+  console.log("You've reach create new event.");
+  const newEvent = req.body;
+  const thisPlan = await Plan.findById(req.param.planId);
+  console.log(thisPlan);
+
+//Now that we've found the plan, we are updating the event array... 
+  thisPlan.events.push(newEvent);
+  await thisPlan.save()
+});
+
+//don't necessarily need CRUD delete for events.. but we can use the same logic.... (instead of push... its the opposite of the push)
 
 
 
@@ -51,51 +73,13 @@ router.get('/new', (req, res) => {
 
 
 //GET events by id
-// // GET request to render the page for creating a new travel plan (newtravelplan)
-// router.get('/newtravelplan', (req, res) => {
-//   res.render('newTravelPlanForm.ejs');
-// });
-
-// // POST request to create a new event for a specific travel plan (newtravelplan)
-// router.post('/newtravelplan', (req, res) => {
-//   const planId = req.body.planId; // Assuming you send the plan ID in the request body
-//   const eventData = req.body; // Extract event data from the request body
-
-//   Plan.findById(planId, (err, plan) => {
-//     if (err) {
-//       return res.status(500).json({ error: 'Internal Server Error' });
-//     }
-
-//     if (!plan) {
-//       return res.status(404).json({ error: 'Plan not found' });
-//     }
-
-//     // Add the new event data to the plan's events array
-//     plan.events.push(eventData);
-
-//     // Save the updated plan
-//     plan.save((err, updatedPlan) => {
-//       if (err) {
-//         return res.status(500).json({ error: 'Failed to save plan' });
-//       }
-
-//       res.json(eventData); // Respond with the newly created event data
-//     });
-//   });
-// });
-
-
-
-
-
-router.get('/newtravelplan', (req, res) => {
+router.get('/myplan/:planId', (req, res) => {
   const planId = req.params.planId;
 
   Plan.findById(planId, (err, plan) => {
     if (err) {
       return res.status(500).json({ error: 'Internal Server Error' });
     }
-
     if (!plan) {
       return res.status(404).json({ error: 'Plan not found' });
     }
@@ -103,6 +87,7 @@ router.get('/newtravelplan', (req, res) => {
     res.json(eventList);
   });
 });
+
 
 
 //GET create new events modal 

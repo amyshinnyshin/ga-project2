@@ -8,10 +8,10 @@ router.get('/', async (req, res) =>{
 }); 
 
 //GET Create New Travel Plans Route 
-router.get('/newtravelplan', (req, res) => {
-    console.log('Showing the New Travel Plan Page');
-    res.render('newTravelPlanForm.ejs');
-});
+// router.get('/newtravelplan', (req, res) => {
+//     console.log('Showing the New Travel Plan Page');
+//     res.render('newTravelPlanForm.ejs');
+// });
 
 // //POST Newly Created Travel Plan (form submission)
 // router.post('/create', (req, res)=> {

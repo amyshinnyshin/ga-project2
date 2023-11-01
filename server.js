@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 // const path = require('path');
 const router = express.Router();
 const { DATABASE_URL, PORT } = require('./config.js');
+const ejs = require('ejs')
+const fs = require('fs');
 
 
 //app.set('view engine', 'ejs');
@@ -43,7 +45,7 @@ const travelPlansRouter = require('./routers/travelPlansRouter.js');
 const usersRouter = require('./routers/usersRouter.js');
 
 app.use('/', hompeageRouter)
-app.use('/newtravelplan', travelPlansRouter);
+app.use('/plans', travelPlansRouter);
 app.use('/users', usersRouter);
 
 app.use('/', dashboardRouter);

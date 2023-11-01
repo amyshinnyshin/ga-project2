@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 
 const eventSchema = new mongoose.Schema({
-  name: {type:String},
-  date: {type:Date, default:Date.now()},
-  startTime: {type:Date, default:Date.now()},
-  endTime: {type:Date, default:Date.now()},
+  eventName: {type: String},
+  eventDate: {type: Date, default:Date.now()},
+  startTime: {type: String, default:Date.now()},
+  endTime: {type: String, default:Date.now()},
   description: {type:String}
 });
 
@@ -15,11 +15,12 @@ const planSchema = new mongoose.Schema({
   planName: { type: String, required: true },
   location: { type: String, required: true },
   description: { type: String, required: true },
-  events: [eventSchema]
+  events: [eventSchema],
+  traveler: {type:mongoose.Schema.Types.ObjectId, ref: 'users'}
 });
 
 const Plan = mongoose.model('Plan', planSchema, 'plans');
-const Event = mongoose.model('Event', eventSchema, 'event');
+// const Event = mongoose.model('Event', eventSchema, 'event');
 
 
-module.exports = { Plan, Event};
+module.exports = { Plan };

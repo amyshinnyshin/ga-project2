@@ -111,11 +111,16 @@ td {
   justify-content: right;
 }
 
-.edit {
+.edit-event {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-    
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.edit-event:hover {
+  border-bottom: 1px solid #5D5D5D;
 }
 
 .line{
@@ -124,6 +129,12 @@ td {
 
 .delete {
   color: var(--guardsman-red-700, #DB0000);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.delete:hover {
+  border-bottom: 1px solid #DB0000;
 }
 
 
@@ -203,6 +214,7 @@ td {
   font-size: 16px;
   font-weight: 600;
   line-height: 24px; /* 150% */
+  cursor: pointer;
 }
 
 .add-tertiary-button {
@@ -210,6 +222,7 @@ td {
   align-items: flex-start;
   gap: 8px;
   border: none;
+  margin: 24px 0px 32px 0px; 
   padding: 0px;
   background-color: white;
   color: var(--black-600, #5D5D5D);
@@ -218,6 +231,7 @@ td {
   font-weight: 600;
   line-height: 24px; /* 150% */
   border-bottom: 1px solid white;
+  cursor: pointer;
 }
 
 .add-tertiary-button:hover {
@@ -433,7 +447,7 @@ ul {
   transition: background-color 0.3s;
 } 
 
-.menu-group{
+.menu-group, .edit{
   display: flex;
   align-items: center;
   gap: 8px;
@@ -504,8 +518,10 @@ textarea {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 16px;
 }
+
+
+
 h3 {
   font-size: 20px;
   font-weight: 600;
@@ -526,4 +542,93 @@ h3 {
 .userList {
   margin: 0px;
   padding: 0px;
+}
+
+
+
+/* ------------------ event-stuff... */
+.event-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  align-self: stretch;
+}
+
+.event-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.event-action-group{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+h5.readonly-eventname {
+  color: var(--black-950, #050505);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;  
+  margin: 0px;
+
+}
+
+.dateandtime{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.date, .start-time, .end-time{
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+#eventList li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  align-self: stretch;
+  padding: 16px;
+  border-radius: 24px;
+  border: 1px solid var(--black-100, #E7E7E7);
+  background: #FFF;
+  margin-bottom: 16px;
+}
+
+ul{
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+.line{
+  height: 16px;
+}
+
+.edit-tertiary-button{
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  color: #5D5D5D;
+  font-family: 'Outfit';
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  line-height: 24px; /* 150% */
 }

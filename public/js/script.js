@@ -1,3 +1,5 @@
+// const { event } = require("jquery");
+
 // ---------------------------------------VARIABLES
 const currentPage = window.location.pathname;
 const navButtons = document.querySelectorAll('.navigation-menu li');

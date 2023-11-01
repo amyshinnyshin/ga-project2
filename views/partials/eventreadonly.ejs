@@ -1,17 +1,20 @@
-<div class="event-container">
-<div class="event-header">
-    <h5>Test Event</h5>
-    <div class="event-action-group">
+
+<li>
+    <div class="event-header">
+      <h5><%= event.eventName %></h5>
+      <div class="event-action-group">
         <div class="edit">
-            <span><img src="/img/globe.png" alt="" class="icons globe"></span>Explore
+          <span><img src="/img/pen.png" alt="" class="icons pen"></span>Edit
         </div>
+        <img class="line" src="/img/line.png" alt="">
         <div class="delete">Delete</div>
+      </div>
     </div>
-</div>
-<div class="dateandtime">
-    <p class="date">11/06/1991</p>
-    <p class="start time">10:00AM</p>
-    <p class="end time">10:00AM</p>
-</div>
-<p class="description">Here is an example of the description</p>
-</div>
+    <div class="dateandtime">
+      <p class="date"><%= event.eventDate %></p>
+      <p class="start-time"><%= event.startTime %></p>
+      <p class="end-time"><%= event.endTime %></p>
+    </div>
+    <p class="description"><%= event.description %></p>
+  </li>
+  
