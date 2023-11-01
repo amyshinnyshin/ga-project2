@@ -6,10 +6,10 @@ const { travelplans } = require('../controllers/travelPlansController');
 
 
 //GET travelplan by id route
-router.get('/:id', async (req, res) => {
-  const travelPlans = await Plan.findById(req.params.id);
-  res.render('newTravelPlanForm.ejs', { travelPlan });
-});
+// router.get('/:id', async (req, res) => {
+//   const travelPlans = await Plan.findById(req.params.id);
+//   res.render('newTravelPlanForm.ejs', { travelPlan });
+// });
 
 //GET all travelplans route
 router.get('/', travelplans);
@@ -26,8 +26,6 @@ router.get('/', travelplans);
 
 // GET 
 router.get('/new', (req, res) => {
-  console.log('You have reached the send new travel plans form');
-  res.render('./newTravelPlanForm.ejs');
 });
 
 // POST
@@ -87,10 +85,10 @@ router.post('/:planId', async (req, res) => {
 
 //--------------------------------------------WHAT DAVID HELPED WITH 😆
 
-router.get('/new', (req, res) => {
-  console.log('You have reached the send new travelplans form');
-  res.render('./newTravelPlanForm.ejs');
-});
+// router.get('/new', (req, res) => {
+//   console.log('You have reached the send new travelplans form');
+//   res.render('./newTravelPlanForm.ejs');
+// });
 
 //-----consider making an actual event model....
 router.put('/:planId/:eventId', async (req, res) =>{
