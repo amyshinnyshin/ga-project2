@@ -1,24 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const { dashboard, myPlans, recentPlans, sharedPlans, favoritePlans, trashedPlans } = require('../controllers/dashboardController');
 
-//GET Homepage
-router.get('/', async (req, res) =>{
-    console.log('Showing the Homepage')
-    res.render('./homepage.ejs')
-}); 
+//GET travelplan by id route
 
-//GET Create New Travel Plans Route 
-// router.post('/new', (req, res) => {
-//     console.log('Showing the New Travel Plan Page');
-//     res.render('./newTravelPlanForm.ejs');
-// });
-
-// //POST Newly Created Travel Plan (form submission)
-// router.post('/create', (req, res)=> {
-//     console.log('Creating and Posting a new Travel Plan')
-
-//     res.redirect('/')
-// })
+//GET all travelplans route
+router.get('/', dashboard);
+router.get('/myplans', myPlans);
+router.get('/recentplans', recentPlans);
+router.get('/sharedplans', sharedPlans);
+router.get('/favoriteplans', favoritePlans);
+router.get('/trashedplans', trashedPlans);
 
 
 module.exports = router;
