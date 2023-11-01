@@ -10,20 +10,21 @@ const { DATABASE_URL, PORT } = require('../config');
 const { Plan, Event } = require('../models/plan'); // importing USER model
 
 
-//---------------------List All Events--------------------//
-// const allEvents = (req, res, next) => {
-//   User.find({}).then((events) => {
-//     res.render('users.ejs', { users });
-//   });
-// };
+//---------------------List All Plans--------------------//
+const allPlans = (req, res, next) => {
+  User.find({}).then((events) => {
+    res.render('allmyplans.ejs', { plans });
+  });
+};
 
-//---------------------Creates New User--------------------//
+//---------------------Creates New Plan--------------------//
+
 
 
 function travelplans(req, res, next) {
   res.render("newTravelPlanForm.ejs");
 }
 
-module.exports = { travelplans };
+module.exports = { travelplans , allPlans };
 
 

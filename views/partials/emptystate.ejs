@@ -1,8 +1,14 @@
-<div class="emptystate-container">
+
+
+<form class="emptystate-container" action="/plans/new" method="GET">
   <img id="emptystateimage" src="img/launch_emptystateimage.png" alt="plan-empty-state" />
   <div class="emptystate-copy">
     <h4>No Travel Plans</h4>
-    <p>Plan your perfect stree-free trip. Create a travel plan.</p>
+    <p>Plan your perfect stress-free trip. Create a travel plan.</p>
   </div>  
-  <button class="secondary-button" action="/plans/new" method="GET"><a class="create-group" href=""><span><img src="/img/plus-dark.png" alt="" class="icons plus"></span>New Plan</a></button>
-</div>
+  <div class="newplan-secondary-button">
+    <span><img src="/img/plus-dark.png" alt="" class="icons plus"></span>
+    <input class="newplanbutton" type="submit" value="New Plan">
+  </div>
+</form>
+

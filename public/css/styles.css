@@ -166,6 +166,40 @@ td {
   background: var(--saffron-500, #F6C113);
 }
 
+.newplanbutton {
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background: none;
+  height: 24px;
+  cursor: pointer;
+}
+
+input.newplanbutton{
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px; /* 150% */
+}
+
+.newplan-secondary-button{
+  display: flex;
+  padding: 12px 32px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--black-100, #E7E7E7);
+  color: var(--black-950, #050505);
+}
+
+.newplan-secondary-button:hover{
+  background: var(--black-200, #D1D1D1);
+}
+
+
 .primary-button, .secondary-button {
   display: flex;
   padding: 12px 32px;
@@ -185,6 +219,7 @@ td {
   background: var(--saffron-400, #FCDD23);
   color: var(--black-950, #050505);
   font-family: 'Outfit';
+  margin: 0px;
 }
 
 .primary-button:hover {
@@ -195,6 +230,7 @@ td {
   background: var(--black-100, #E7E7E7);
   color: var(--black-950, #050505);
   font-family: 'Outfit';
+
 }
 
 .secondary-button:hover {
@@ -215,6 +251,7 @@ td {
   font-weight: 600;
   line-height: 24px; /* 150% */
   cursor: pointer;
+  margin: 0px;
 }
 
 .add-tertiary-button {
@@ -477,10 +514,16 @@ ul {
 
 .plan-details{
   display: grid;
-  padding-bottom: 24px;
+  /* border-bottom: 1px solid var(--black-100, #E7E7E7); */
+}
+
+div.plan-details {
   border-bottom: 1px solid var(--black-100, #E7E7E7);
 }
 
+.form-spacing {
+  padding-bottom: 24px;
+}
 
 input, textarea, label {
   grid-column: span 8;

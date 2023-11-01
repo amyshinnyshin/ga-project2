@@ -12,9 +12,9 @@ const eventSchema = new mongoose.Schema({
 
 
 const planSchema = new mongoose.Schema({
-  planName: { type: String, required: true },
-  location: { type: String, required: true },
-  description: { type: String, required: true },
+  planName: { type: String},
+  location: { type: String},
+  description: { type: String},
   events: [eventSchema],
   traveler: {type:mongoose.Schema.Types.ObjectId, ref: 'users'}
 });
