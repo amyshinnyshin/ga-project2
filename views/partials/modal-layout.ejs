@@ -1,8 +1,10 @@
 <div class="modal-overlay">
-  <!----------------MODAL---------------------->
-  <div class="template-modal" tabindex="-1" role="dialog">
-    <!-- <div class="template-modal-dialog" role="document"> -->
-      <div class="template-modal-content">
+  <!-- MODAL -->
+  <form id="addEventForm" action="/newtravelplan" method="POST" class="template-modal" tabindex="-1" role="dialog">
+    <div class="template-modal-content">
+      
+      <!-- modal-body -->
+      <div class="template-modal-body-container">
         <!-- modal header -->
         <div class="template-modal-header">
           <h2 class="template-modal-title"><%= modalTitle %></h2>
@@ -10,41 +12,38 @@
             <span><img class="icons close" src="/img/xmark.png" alt=""></span>
           </button>
         </div>
-        <!-- modal-body -->
-        <div class="template-modal-body">
-          <!-- <%- include('eventmodalbody') -%> -->
-          <form id="addEventForm" action="/travelplan/events" method="POST" name="addEventForm" class="events-modal-body">
-            <label for="eventName">Event Name</label>
-            <input type="text" id="eventName" name="eventName" required />
+
+        <div class="events-modal-body">
+          <label for="eventName">Event Name</label>
+          <input type="text" id="eventName" name="eventName" required />
         
-            <div class="datetime-group">
-                <div class="datetime date">
-                    <label for="eventDate">Date:</label>
-                    <input type="date" id="eventDate" name="eventDate" required>
-                </div>
-                <div class="datetime time">
-                    <label for="startTime">Start Time:</label>
-                    <input type="time" id="startTime" name="startTime" min="00:00" max="23:59">
-                </div>
-                <div class="datetime time">
-                    <label for="startTime">End Time:</label>
-                    <input type="time" id="endTime" name="startTime" min="00:00" max="23:59">
-                </div>
+          <div class="datetime-group">
+            <div class="datetime date">
+              <label for="eventDate">Date:</label>
+              <input type="date" id="eventDate" name="eventDate" required>
             </div>
+            <div class="datetime time">
+              <label for="startTime">Start Time:</label>
+              <input type="time" id="startTime" name="startTime" min="00:00" max="23:59">
+            </div>
+            <div class="datetime time">
+              <label for="endTime">End Time:</label>
+              <input type="time" id="endTime" name="endTime" min="00:00" max="23:59">
+            </div>
+          </div>
             
-            <label for="description">Description</label>
-            <textarea id="description" name="description" rows="4" required></textarea>
-        
-          </form>
-        </div> 
+          <label for="description">Description</label>
+          <textarea id="description" name="description" rows="4" required></textarea>
+        </div>
       </div>
+
       <!-- modal-footer -->
       <div class="template-modal-footer">
         <div class="button-group">
-          <button type="button" class="tertiary-button cancel" >Cancel</button>
-          <input type="submit" value="Save Changes" class="primary-button save-changes">
+            <button type="button" class="tertiary-button cancel">Cancel</button>
+            <input type="submit" value="Save Changes" class="primary-button save-changes">
         </div>
       </div>
-    <!-- </div> -->
-  </div>
+    </div>
+  </form>
 </div>

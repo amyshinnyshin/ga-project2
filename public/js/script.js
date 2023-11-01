@@ -8,7 +8,11 @@ const addEventButton = document.getElementById('addEventButton');
 const modalOverlay = document.querySelector('.modal-overlay');
 const closeModalButton = modalOverlay.querySelector('.close');
 const cancelModalButton = modalOverlay.querySelector('.cancel');
+
+
 const saveChangeButton = modalOverlay.querySelector('.save-changes');
+
+//–––––––––––-Variable for Event Form
 const modalForm = document.getElementById('addEventForm')
 
 const eventList = document.getElementById('eventList')

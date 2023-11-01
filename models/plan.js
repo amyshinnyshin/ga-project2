@@ -19,6 +19,7 @@ const planSchema = new mongoose.Schema({
 });
 
 const Plan = mongoose.model('Plan', planSchema, 'plans');
+const Event = mongoose.model('Event', eventSchema, 'event');
 
 
-module.exports = { Plan };
+module.exports = { Plan, Event};

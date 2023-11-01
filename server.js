@@ -43,7 +43,7 @@ const travelPlansRouter = require('./routers/travelPlansRouter.js');
 const usersRouter = require('./routers/usersRouter.js');
 
 app.use('/', hompeageRouter)
-app.use('/travelplans', travelPlansRouter);
+app.use('/newtravelplan', travelPlansRouter);
 app.use('/users', usersRouter);
 
 app.use('/', dashboardRouter);
