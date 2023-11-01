@@ -437,6 +437,9 @@ ul.breadcrumbs {
 
 }
 
+dt {display:block}
+dd {display:inline}
+
 .button{
   background:var(--bg-purple);
   color:white;
