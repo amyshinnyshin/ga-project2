@@ -15,11 +15,9 @@ router.post('/', async (req, res) => {
   res.json(newPlan);
   // send to browser acknowledgement: redirect to homepage (with note?)
 
+  //UPDATE travelPlan by id route
 
-//UPDATE travelPlan by id route
-
-
-//DELETE travelPlan by id route
+  //DELETE travelPlan by id route
 });
 
 router.get('/new', (req, res) => {

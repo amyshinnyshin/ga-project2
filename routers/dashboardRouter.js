@@ -6,7 +6,6 @@ const { dashboard, myPlans, recentPlans, sharedPlans, favoritePlans, trashedPlan
 
 //GET all travelplans route
 router.get('/', dashboard);
-
 router.get('/myplans', myPlans);
 router.get('/recentplans', recentPlans);
 router.get('/sharedplans', sharedPlans);
