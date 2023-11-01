@@ -11,6 +11,20 @@ const { User } = require('../models/user'); // importing USER model
 
 //--------------  CRUD  ----------------//
 
+//--------------  READ: List all users  ----------------//
+
+async function allUsers(req, res, next) {
+  const users = await User.find({});
+  res.render('users.ejs', { users });
+}
+
+//--------------  READ single user Profile  ----------------//
+
+async function userProfile function (req,res, next) {
+  const oneUser = User.findById(req.params.id)
+   res.render('userprofile.ejs',{ oneUser });
+};
+
 //--------------  CREATE new user  ----------------//
 
 function signup(req, res, next) {
@@ -39,14 +53,6 @@ function signup(req, res, next) {
   res.render('/');
 }
 
-//--------------  READ: List all users  ----------------//
-
-async function allUsers(req, res, next) {
-  const users = await User.find({});
-  res.render('users.ejs', { users });
-}
-
-//--------------  READ single user Profile  ----------------//
 
 //--------------  UPDATE user  ----------------//
 async function updateUserById(req, res, next) {
@@ -85,4 +91,4 @@ function updateUserInDB(req, res, next) {
 
 //--------------  DELETE user  ----------------//
 
-module.exports = { User, signup, allUsers, updateUserById, updateUserInDB };
+module.exports = { User, signup, allUsers, updateUserById, updateUserInDB, userProfile };

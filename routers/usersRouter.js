@@ -2,9 +2,11 @@ const express = require('express');
 const { User } = require('../models/user.js');
 const router = express.Router();
 
-const { signup, allUsers, updateUserById, updateUserInDB } = require('../controllers/usersController');
+const { userProfile, allUsers, signup, updateUserById, updateUserInDB } = require('../controllers/usersController', 'deleteUser');
 
 //--------------  READ: GET single user by id route  ----------------//
+
+router.get('/:id', userProfile);
 
 //--------------   READ: GET all users router  ----------------//
 
@@ -29,5 +31,9 @@ router.get('/updateuser/:id', updateUserById);
 router.post('/update', updateUserInDB);
 
 //--------------   DELETE user by id route  ----------------//
+
+router.post('/delete/:id', deleteUser);
+
+//--------------  And .... export the module  ----------------//
 
 module.exports = router;
