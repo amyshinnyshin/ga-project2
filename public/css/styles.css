@@ -420,8 +420,30 @@ ul.breadcrumbs {
 
 .user-wrap {
   text-align: left;
-} 
+}
 
+.a-user{
+  display:inline-block;
+  margin:0 5px;
+}
+.delete-user{
+  margin-top:35px;
+  margin-bottom:8px;
+  font-weight: 500;
+}
+
+#delete-section{
+  width:200px;
+
+}
+
+.button{
+  background:var(--bg-purple);
+  color:white;
+  padding:5px 10px;
+  text-decoration:none;
+  border-radius:24px;
+}
 /* ------------------ LEFT NAV */
 #leftNav {
   border-right: 1px solid var(--black-100, #E7E7E7);
@@ -517,10 +539,10 @@ ul {
 /* ------------------ TRAVEL PLAN */
 .body-container{
   
-  display: grid;
-  position: relative;
-  grid-template-columns: repeat(12, 1fr);
-  grid-column-gap: 24px;
+  /*display: grid;*/
+  /*position: relative;*/
+  /*grid-template-columns: repeat(12, 1fr);*/
+  /*grid-column-gap: 24px;*/
   padding: 12px 32px 24px 32px;
 }
 .left-section {
