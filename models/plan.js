@@ -12,9 +12,9 @@ const eventSchema = new mongoose.Schema({
 
 
 const planSchema = new mongoose.Schema({
-  planName: { type: String},
-  location: { type: String},
-  description: { type: String},
+  planName: { type: String, required: true },
+  location: { type: String, required: true },
+  description: { type: String, required: true },
   events: [eventSchema],
   traveler: {type:mongoose.Schema.Types.ObjectId, ref: 'users'}
 });
@@ -23,4 +23,4 @@ const Plan = mongoose.model('Plan', planSchema, 'plans');
 // const Event = mongoose.model('Event', eventSchema, 'event');
 
 
-module.exports = { Plan, Event};
+module.exports = { Plan };

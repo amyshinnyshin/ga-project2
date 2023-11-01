@@ -4,6 +4,7 @@ const { Plan } = require('../models/plan');
 const { travelplans } = require('../controllers/travelPlansController');
 
 
+
 //GET travelplan by id route
 router.get('/:id', async (req, res) => {
   const travelPlans = await Plan.findById(req.params.id);
