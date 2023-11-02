@@ -18,7 +18,7 @@ router.get( '/', allUsers );
 // returns form
 router.get( '/newuser', async ( req, res ) => {
     console.log( 'Now creating a new user' );
-    res.render( './newUserForm.ejs' ); // starts at views
+    res.render( './usernewform.ejs' ); // starts at views
 } );
 
 // sends data to DB
@@ -27,9 +27,8 @@ router.post( '/signup', signup );
 //--------------   UPDATE user by id route  ----------------//
 // get edit form
 router.get( '/updateuser/:id', updateUserById );
+router.post('/updateuser/:id', updateUserInDB);
 
-//--------------  Update user via PUT edit form  ----------------//
-router.post( '/update', updateUserInDB );
 
 //--------------   DELETE user by id route  ----------------//
 

@@ -17,7 +17,7 @@ const {User} = require( '../models/user' ); // importing USER model
 
 async function allUsers( req, res, next ) {
     const users = await User.find( {} );
-    res.render( 'users.ejs', {users} );
+    res.render( 'userslist.ejs', {users} );
 }
 
 //--------------  READ single user Profile  ----------------//
@@ -58,33 +58,44 @@ function signup( req, res, next ) {
 //--------------  READ single user Profile  ----------------//
 
 //--------------  UPDATE user  ----------------//
-async function updateUserById( req, res, next ) {
-    const theUser = await User.findById( req.params.id );
-    res.render( 'updateUserForm.ejs', {theUser} );
-};
+async function updateUserById(req, res, next) {
+    try {
+        const theUser = await User.findById(req.params.id);
+        res.render('userupdateform.ejs', { theUser });
+    } catch (error) {
+        console.error('Error finding user:', error);
+        res.status(500).send('Internal Server Error');
+    }
+}
 
-function updateUserInDB( req, res, next ) {
-    const requiredFields = ['_id', 'firstName', 'lastName', 'email'];
+async function updateUserInDB(req, res, next) {
+    try {
+        const requiredFields = ['firstName', 'lastName'];
 
-    for ( let i = 0; i < requiredFields.length; i++ ) {
-        const field = requiredFields[i];
-        if ( !(field in req.body) ) {
-            const errorMessage = `missing ${field} in request body`;
-            console.error( errorMessage );
-            return res.send( errorMessage );
+        for (let i = 0; i < requiredFields.length; i++) {
+            const field = requiredFields[i];
+            if (!(field in req.body)) {
+                const errorMessage = `missing ${field} in request body`;
+                console.error(errorMessage);
+                return res.status(400).send(errorMessage);
+            }
         }
+
+        // Normalizing email
+        req.body.email = req.body.email.toLowerCase();
+
+        const { _id, firstName, lastName, email } = req.body;
+
+        const updatedUser = { firstName, lastName, email };
+
+        await User.findByIdAndUpdate(_id, updatedUser, { new: true, runValidators: true });
+
+        res.redirect('/users');
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).send('Internal Server Error');
     }
 
-    //normalizing email
-    req.body.email = req.body.email.toLowerCase();
-
-    const {firstName, lastName} = req.body;
-
-    const updatedUser = {firstName, lastName};
-
-    User.findOneAndUpdate( {id: req.body.id}, updatedUser );
-
-    res.redirect( '/users' );
 }
 
 //--------------  DELETE user  ----------------//

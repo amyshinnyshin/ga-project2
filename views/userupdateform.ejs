@@ -1,13 +1,10 @@
 <%- include('partials/header') -%>
 <!-- <h1>My Plans / New</h1> -->
-
-<%= theUser %>
-
 <div><%- include('partials/navigation/breadcrumbs') -%></div>
 <div class="body-container">
     <div class="left-section">
         <!--  FORM START  -->
-        <form action="/users/update" method="POST" name="userUpdateForm" id="userUpdateForm">
+        <form action="/users/updateuser/<%= theUser._id %>" method="POST" name="userUpdateForm" id="userUpdateForm">
             <div>
                 <label for="firstName">First Name</label>
                 <input name="firstName" id="firstName" type="text" value="<%= theUser.firstName %>"/>
@@ -20,10 +17,13 @@
                 <label for="email">Email</label>
                 <input name="email" id="email" type="text" value="<%= theUser.email %>"/>
             </div>
-            <input type="hidden" id="_id" name="_id" value="<%= theUser._id %>"/>
+            <input type="hidden" name="_id" value="<%= theUser._id %>"/>
 
             <input name="submitNewUser" type="submit" value="Submit" id="submitNewButton"/>
         </form>
+
+
+
         <!--  FORM END  -->
         <form action="/users/delete/<%= theUser._id %>" method="POST" name="userDeleteForm" id="delete-section">
             <input type="hidden" id="_id" name="_id" value="<%= theUser._id %>"/>
