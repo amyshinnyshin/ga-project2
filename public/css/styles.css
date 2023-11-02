@@ -437,6 +437,9 @@ ul.breadcrumbs {
 
 }
 
+dt {display:block}
+dd {display:inline}
+
 .button{
   background:var(--bg-purple);
   color:white;
@@ -707,4 +710,14 @@ ul{
   font-weight: 400;
   cursor: pointer;
   line-height: 24px; /* 150% */
+}
+
+
+#userUpdateForm label{
+    display:inline-block;
+    width:150px;
+  }
+#userUpdateForm input{
+  display:inline-block;
+  width:300px;
 }

@@ -7,14 +7,20 @@
 <div class="body-container">
   <div class="left-section">
     <!--  FORM START  -->
-    <form action="/users/update" method="POST" name="signupForm">
-      <input type="hidden" id="_id" name="_id" value="<%= theUser._id %>" />
-      <label for="firstName">First Name</label>
-      <input name="firstName" id="firstName" type="text" value="<%= theUser.firstName %>" />
+    <form action="/users/update" method="POST" name="userUpdateForm" id="userUpdateForm">
+     <div>
+       <label for="firstName">First Name</label>
+       <input name="firstName" id="firstName" type="text" value="<%= theUser.firstName %>" />
+     </div>
+    <div>
       <label for="lastName">Last Name</label>
       <input name="lastName" id="lastName" type="text" value="<%= theUser.lastName %>" />
-      <label for="email">Email</label>
-      <input name="email" id="email" type="text" value="<%= theUser.email %>" />
+    </div>
+  <div>
+    <label for="email">Email</label>
+    <input name="email" id="email" type="text" value="<%= theUser.email %>" />
+  </div>
+      <input type="hidden" id="_id" name="_id" value="<%= theUser._id %>" />
 
       <input name="submitNewUser" type="submit" value="Submit" />
     </form>

@@ -5,7 +5,6 @@ const router = express.Router();
 
 const mongoose = require('mongoose');
 
-
 const { DATABASE_URL, PORT } = require('../config');
 const { Plan } = require('../models/plan'); // importing USER model
 
@@ -25,7 +24,7 @@ const allPlans = (req, res, next) => {
 
 function travelplans(req, res, next) {
   console.log('You have reached the send new travel plans form');
-  res.render('./newTravelPlanForm.ejs');
+  res.render('newTravelPlanForm.ejs');
 }
 
 module.exports = { travelplans , allPlans };

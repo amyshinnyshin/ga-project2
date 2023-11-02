@@ -23,7 +23,7 @@ async function allUsers(req, res, next) {
 //--------------  READ single user Profile  ----------------//
 
 async function userProfile(req, res, next) {
-  const oneUser = User.findById(req.params.id);
+  const oneUser = await User.findById(req.params.id);
   res.render('userprofile.ejs', { oneUser });
 }
 
@@ -58,7 +58,7 @@ function signup(req, res, next) {
 //--------------  READ single user Profile  ----------------//
 
 //--------------  UPDATE user  ----------------//
-const updateUserById = async (req, res, next) => {
+async function updateUserById  (req, res, next) {
   console.log('controller updateUserById');
   const theUser = await User.findById(req.params.id);
   res.render('updateUserForm.ejs', { theUser });
