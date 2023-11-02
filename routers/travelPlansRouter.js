@@ -6,7 +6,7 @@ const { travelplans, allPlans } = require('../controllers/travelPlansController'
 // // GET travelplan by id route
 // router.get('/:id', async (req, res) => {
 //   const travelPlans = await Plan.findById(req.params.id);
-//   res.render('newTravelPlanForm.ejs', { travelPlan });
+//   res.render('plannewform.ejs', { travelPlan });
 // });
 //
 // // // GET all travelplans route

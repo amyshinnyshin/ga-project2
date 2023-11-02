@@ -12,7 +12,7 @@ const { Plan } = require('../models/plan'); // importing USER model
 //---------------------List All Plans--------------------//
 const allPlans = (req, res, next) => {
   Plan.find({}).then((plans) => {
-    res.render('allmyplans.ejs', { plans });
+    res.render('plansallmine.ejs', { plans });
   }).catch((error) => {
     console.error(error);
   });
@@ -24,7 +24,7 @@ const allPlans = (req, res, next) => {
 
 function travelplans(req, res, next) {
   console.log('You have reached the send new travel plans form');
-  res.render('newTravelPlanForm.ejs');
+  res.render('plannewform.ejs');
 }
 
 module.exports = { travelplans , allPlans };

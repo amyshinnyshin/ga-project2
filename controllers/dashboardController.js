@@ -8,23 +8,23 @@ function dashboard(req, res, next) {
 }
 
 function myPlans(req, res, next) {
-  res.render('myplans.ejs');
+  res.render('plansmy.ejs');
 }
 
 function recentPlans(req, res, next) {
-  res.render('recentplans.ejs');
+  res.render('plansrecent.ejs');
 }
 
 function favoritePlans(req, res, next) {
-  res.render('favoriteplans.ejs');
+  res.render('plansfavorite.ejs');
 }
 
 function sharedPlans(req, res, next) {
-  res.render('sharedplans.ejs');
+  res.render('plansshared.ejs');
 }
 
 function trashedPlans(req, res, next) {
-  res.render('trashedplans.ejs');
+  res.render('planstrashed.ejs');
 }
 
 module.exports = { dashboard, myPlans, recentPlans, sharedPlans, favoritePlans, trashedPlans };
