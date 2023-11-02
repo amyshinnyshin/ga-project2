@@ -355,6 +355,7 @@ ul.breadcrumbs {
 /* ------------------ TOP NAV */
 #topbar {
     border-bottom: 1px solid var(--black-100, #E7E7E7);
+
     position: fixed;
     top: 0;
     left: 0;
@@ -371,7 +372,7 @@ ul.breadcrumbs {
     padding: 16px 32px;
     flex-direction: row;
     justify-content: space-between;
-    padding: 0 32px;
+    padding: 15px 32px;
     width: 100%;
 }
 
@@ -406,6 +407,7 @@ ul.breadcrumbs {
     display: flex;
     align-items: center;
     gap: 32px;
+    flex-basis:15%;
 }
 
 .explore, .back {
@@ -561,10 +563,6 @@ ul {
 /* ------------------ TRAVEL PLAN */
 .body-container {
 
-    /*display: grid;*/
-    /*position: relative;*/
-    /*grid-template-columns: repeat(12, 1fr);*/
-    /*grid-column-gap: 24px;*/
     padding: 12px 32px 24px 32px;
 }
 
@@ -630,9 +628,6 @@ h3 {
     margin: 0;
 }
 
-.right-section {
-    grid-column: 9 / span 4;
-}
 
 .google-maps {
     grid-column: 9 / span 4;
