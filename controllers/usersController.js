@@ -58,6 +58,7 @@ function signup( req, res, next ) {
 //--------------  READ single user Profile  ----------------//
 
 //--------------  UPDATE user  ----------------//
+// had to get a little help with this one
 async function updateUserById(req, res, next) {
     try {
         const theUser = await User.findById(req.params.id);
